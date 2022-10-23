@@ -14,14 +14,16 @@ poetry add aserto-directory
 ## Usage
 ```py
 import grpc
-from aserto.directory.common.v2 import ObjectTypeRequest
-from aserto.directory.reader.v2 import ReaderStub
+from aserto.directory.reader.v2 import ReaderStub, GetObjectTypesRequest
 
-with grpc.secure_channel(target=f"directory.prod.aserto.com:8443") as channel:
+with grpc.secure_channel(
+    target="directory.prod.aserto.com:8443",
+    credentials=grpc.ssl_channel_credentials(),
+) as channel:
     reader = ReaderStub(channel)
 
     # List all object types in the directory
-    response = client.GetObjectTypes(
+    response = reader.GetObjectTypes(
         GetObjectTypesRequest(),
         metadata=(
             ("authorization", f"basic {ASERTO_DIRECTORY_API_KEY}"),
@@ -31,4 +33,3 @@ with grpc.secure_channel(target=f"directory.prod.aserto.com:8443") as channel:
 
     for object_type in response.results:
         print("Object Type:", object_type.name)
-```
