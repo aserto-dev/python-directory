@@ -297,16 +297,21 @@ class GetRelationRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PARAM_FIELD_NUMBER: builtins.int
+    WITH_OBJECTS_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.RelationIdentifier:
         """relation selector"""
+    with_objects: builtins.bool
+    """materialize relation objects"""
     def __init__(
         self,
         *,
         param: aserto.directory.common.v2.common_pb2.RelationIdentifier | None = ...,
+        with_objects: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["param", b"param"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["param", b"param"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_with_objects", b"_with_objects", "param", b"param", "with_objects", b"with_objects"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_with_objects", b"_with_objects", "param", b"param", "with_objects", b"with_objects"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_with_objects", b"_with_objects"]) -> typing_extensions.Literal["with_objects"] | None: ...
 
 global___GetRelationRequest = GetRelationRequest
 
@@ -314,16 +319,39 @@ global___GetRelationRequest = GetRelationRequest
 class GetRelationResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing_extensions.final
+    class ObjectsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @property
+        def value(self) -> aserto.directory.common.v2.common_pb2.Object: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: aserto.directory.common.v2.common_pb2.Object | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     RESULTS_FIELD_NUMBER: builtins.int
+    OBJECTS_FIELD_NUMBER: builtins.int
     @property
     def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[aserto.directory.common.v2.common_pb2.Relation]:
         """array of relation instances"""
+    @property
+    def objects(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, aserto.directory.common.v2.common_pb2.Object]:
+        """map of materialized relation objects"""
     def __init__(
         self,
         *,
         results: collections.abc.Iterable[aserto.directory.common.v2.common_pb2.Relation] | None = ...,
+        objects: collections.abc.Mapping[builtins.str, aserto.directory.common.v2.common_pb2.Object] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["results", b"results"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["objects", b"objects", "results", b"results"]) -> None: ...
 
 global___GetRelationResponse = GetRelationResponse
 
