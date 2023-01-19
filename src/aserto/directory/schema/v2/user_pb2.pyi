@@ -75,6 +75,8 @@ global___UserStatus = UserStatus
 
 @typing_extensions.final
 class UserProperties(google.protobuf.message.Message):
+    """Properties of "user" objects."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     EMAIL_FIELD_NUMBER: builtins.int
