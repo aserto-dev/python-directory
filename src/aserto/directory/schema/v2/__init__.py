@@ -5,6 +5,10 @@ from aserto.directory.schema.v2.identity_pb2 import (
     IdentityProperties,
 )
 
+from aserto.directory.schema.v2.group_pb2 import (
+    GroupProperties,
+)
+
 from aserto.directory.schema.v2.user_pb2 import (
     UserStatus,
     UserProperties,
@@ -13,6 +17,7 @@ from aserto.directory.schema.v2.user_pb2 import (
 __all__ = [
     "IdentityKind",
     "IdentityProperties",
+    "GroupProperties",
     "UserStatus",
     "UserProperties",
 ]
