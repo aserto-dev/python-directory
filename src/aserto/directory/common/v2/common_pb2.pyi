@@ -55,7 +55,6 @@ global___Flag = Flag
 class ObjectType(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DISPLAY_NAME_FIELD_NUMBER: builtins.int
     IS_SUBJECT_FIELD_NUMBER: builtins.int
@@ -64,10 +63,7 @@ class ObjectType(google.protobuf.message.Message):
     SCHEMA_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
-    DELETED_AT_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
-    id: builtins.int
-    """internal object type id"""
     name: builtins.str
     """object type name (unique, lc-string)"""
     display_name: builtins.str
@@ -87,15 +83,11 @@ class ObjectType(google.protobuf.message.Message):
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """last updated timestamp (UTC)"""
-    @property
-    def deleted_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """deleted timestamp (UTC)"""
     hash: builtins.str
     """object instance hash"""
     def __init__(
         self,
         *,
-        id: builtins.int = ...,
         name: builtins.str = ...,
         display_name: builtins.str = ...,
         is_subject: builtins.bool = ...,
@@ -104,11 +96,10 @@ class ObjectType(google.protobuf.message.Message):
         schema: google.protobuf.struct_pb2.Struct | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        deleted_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         hash: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "schema", b"schema", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "display_name", b"display_name", "hash", b"hash", "id", b"id", "is_subject", b"is_subject", "name", b"name", "ordinal", b"ordinal", "schema", b"schema", "status", b"status", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "schema", b"schema", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "display_name", b"display_name", "hash", b"hash", "is_subject", b"is_subject", "name", b"name", "ordinal", b"ordinal", "schema", b"schema", "status", b"status", "updated_at", b"updated_at"]) -> None: ...
 
 global___ObjectType = ObjectType
 
@@ -116,15 +107,11 @@ global___ObjectType = ObjectType
 class Permission(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DISPLAY_NAME_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
-    DELETED_AT_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """internal permission id"""
     name: builtins.str
     """permission name (unique, cs-string)"""
     display_name: builtins.str
@@ -135,24 +122,19 @@ class Permission(google.protobuf.message.Message):
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """last updated timestamp (UTC)"""
-    @property
-    def deleted_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """deleted timestamp (UTC)"""
     hash: builtins.str
     """object instance hash"""
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
         name: builtins.str = ...,
         display_name: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        deleted_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         hash: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "display_name", b"display_name", "hash", b"hash", "id", b"id", "name", b"name", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "display_name", b"display_name", "hash", b"hash", "name", b"name", "updated_at", b"updated_at"]) -> None: ...
 
 global___Permission = Permission
 
@@ -160,7 +142,6 @@ global___Permission = Permission
 class RelationType(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     OBJECT_TYPE_FIELD_NUMBER: builtins.int
     DISPLAY_NAME_FIELD_NUMBER: builtins.int
@@ -170,10 +151,7 @@ class RelationType(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
-    DELETED_AT_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
-    id: builtins.int
-    """relation type id selector"""
     name: builtins.str
     """relation type name selector"""
     object_type: builtins.str
@@ -196,15 +174,11 @@ class RelationType(google.protobuf.message.Message):
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """last updated timestamp (UTC)"""
-    @property
-    def deleted_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """deleted timestamp (UTC)"""
     hash: builtins.str
     """object instance hash"""
     def __init__(
         self,
         *,
-        id: builtins.int = ...,
         name: builtins.str = ...,
         object_type: builtins.str = ...,
         display_name: builtins.str = ...,
@@ -214,11 +188,10 @@ class RelationType(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[builtins.str] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        deleted_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         hash: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "display_name", b"display_name", "hash", b"hash", "id", b"id", "name", b"name", "object_type", b"object_type", "ordinal", b"ordinal", "permissions", b"permissions", "status", b"status", "unions", b"unions", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "display_name", b"display_name", "hash", b"hash", "name", b"name", "object_type", b"object_type", "ordinal", b"ordinal", "permissions", b"permissions", "status", b"status", "unions", b"unions", "updated_at", b"updated_at"]) -> None: ...
 
 global___RelationType = RelationType
 
@@ -226,17 +199,13 @@ global___RelationType = RelationType
 class Object(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     KEY_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     DISPLAY_NAME_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
-    DELETED_AT_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """internal object id (uuid)"""
     key: builtins.str
     """external object key (cs-string)"""
     type: builtins.str
@@ -252,26 +221,21 @@ class Object(google.protobuf.message.Message):
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """last updated timestamp (UTC)"""
-    @property
-    def deleted_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """deleted timestamp (UTC)"""
     hash: builtins.str
     """object instance hash"""
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
         key: builtins.str = ...,
         type: builtins.str = ...,
         display_name: builtins.str = ...,
         properties: google.protobuf.struct_pb2.Struct | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        deleted_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         hash: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "properties", b"properties", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "display_name", b"display_name", "hash", b"hash", "id", b"id", "key", b"key", "properties", b"properties", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "properties", b"properties", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "display_name", b"display_name", "hash", b"hash", "key", b"key", "properties", b"properties", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
 
 global___Object = Object
 
@@ -284,13 +248,12 @@ class Relation(google.protobuf.message.Message):
     OBJECT_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
-    DELETED_AT_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
     @property
     def subject(self) -> global___ObjectIdentifier:
         """subject identifier"""
     relation: builtins.str
-    """relation type ID"""
+    """relation type name"""
     @property
     def object(self) -> global___ObjectIdentifier:
         """object identifier"""
@@ -300,9 +263,6 @@ class Relation(google.protobuf.message.Message):
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """last updated timestamp (UTC)"""
-    @property
-    def deleted_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """deleted timestamp (UTC)"""
     hash: builtins.str
     """object instance hash"""
     def __init__(
@@ -313,11 +273,10 @@ class Relation(google.protobuf.message.Message):
         object: global___ObjectIdentifier | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        deleted_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         hash: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "object", b"object", "subject", b"subject", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "deleted_at", b"deleted_at", "hash", b"hash", "object", b"object", "relation", b"relation", "subject", b"subject", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "object", b"object", "subject", b"subject", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["created_at", b"created_at", "hash", b"hash", "object", b"object", "relation", b"relation", "subject", b"subject", "updated_at", b"updated_at"]) -> None: ...
 
 global___Relation = Relation
 
@@ -326,27 +285,21 @@ class ObjectDependency(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     OBJECT_TYPE_FIELD_NUMBER: builtins.int
-    OBJECT_ID_FIELD_NUMBER: builtins.int
     OBJECT_KEY_FIELD_NUMBER: builtins.int
     RELATION_FIELD_NUMBER: builtins.int
     SUBJECT_TYPE_FIELD_NUMBER: builtins.int
-    SUBJECT_ID_FIELD_NUMBER: builtins.int
     SUBJECT_KEY_FIELD_NUMBER: builtins.int
     DEPTH_FIELD_NUMBER: builtins.int
     IS_CYCLE_FIELD_NUMBER: builtins.int
     PATH_FIELD_NUMBER: builtins.int
     object_type: builtins.str
     """object type name of source object"""
-    object_id: builtins.str
-    """object id (uuid) of source object"""
     object_key: builtins.str
     """object search key of source object"""
     relation: builtins.str
     """relation identifier"""
     subject_type: builtins.str
     """object type id of target object"""
-    subject_id: builtins.str
-    """object id (uuid) of target object"""
     subject_key: builtins.str
     """object search key of target object"""
     depth: builtins.int
@@ -360,17 +313,15 @@ class ObjectDependency(google.protobuf.message.Message):
         self,
         *,
         object_type: builtins.str = ...,
-        object_id: builtins.str = ...,
         object_key: builtins.str = ...,
         relation: builtins.str = ...,
         subject_type: builtins.str = ...,
-        subject_id: builtins.str = ...,
         subject_key: builtins.str = ...,
         depth: builtins.int = ...,
         is_cycle: builtins.bool = ...,
         path: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["depth", b"depth", "is_cycle", b"is_cycle", "object_id", b"object_id", "object_key", b"object_key", "object_type", b"object_type", "path", b"path", "relation", b"relation", "subject_id", b"subject_id", "subject_key", b"subject_key", "subject_type", b"subject_type"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["depth", b"depth", "is_cycle", b"is_cycle", "object_key", b"object_key", "object_type", b"object_type", "path", b"path", "relation", b"relation", "subject_key", b"subject_key", "subject_type", b"subject_type"]) -> None: ...
 
 global___ObjectDependency = ObjectDependency
 
@@ -380,23 +331,16 @@ class ObjectTypeIdentifier(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    id: builtins.int
-    """internal object type id"""
     name: builtins.str
     """object type name (unique, lc-string)"""
     def __init__(
         self,
         *,
-        id: builtins.int | None = ...,
         name: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_id", b"_id", "_name", b"_name", "id", b"id", "name", b"name"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_id", b"_id", "_name", b"_name", "id", b"id", "name", b"name"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_id", b"_id"]) -> typing_extensions.Literal["id"] | None: ...
-    @typing.overload
+    def HasField(self, field_name: typing_extensions.Literal["_name", b"_name", "name", b"name"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_name", b"_name", "name", b"name"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_name", b"_name"]) -> typing_extensions.Literal["name"] | None: ...
 
 global___ObjectTypeIdentifier = ObjectTypeIdentifier
@@ -407,23 +351,16 @@ class PermissionIdentifier(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """internal permission id"""
     name: builtins.str
     """permission name (unique, cs-string)"""
     def __init__(
         self,
         *,
-        id: builtins.str | None = ...,
         name: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_id", b"_id", "_name", b"_name", "id", b"id", "name", b"name"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_id", b"_id", "_name", b"_name", "id", b"id", "name", b"name"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_id", b"_id"]) -> typing_extensions.Literal["id"] | None: ...
-    @typing.overload
+    def HasField(self, field_name: typing_extensions.Literal["_name", b"_name", "name", b"name"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_name", b"_name", "name", b"name"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_name", b"_name"]) -> typing_extensions.Literal["name"] | None: ...
 
 global___PermissionIdentifier = PermissionIdentifier
@@ -434,11 +371,8 @@ class RelationTypeIdentifier(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     OBJECT_TYPE_FIELD_NUMBER: builtins.int
-    id: builtins.int
-    """relation type id selector"""
     name: builtins.str
     """relation type name selector"""
     object_type: builtins.str
@@ -446,14 +380,11 @@ class RelationTypeIdentifier(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        id: builtins.int | None = ...,
         name: builtins.str | None = ...,
         object_type: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_id", b"_id", "_name", b"_name", "_object_type", b"_object_type", "id", b"id", "name", b"name", "object_type", b"object_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_id", b"_id", "_name", b"_name", "_object_type", b"_object_type", "id", b"id", "name", b"name", "object_type", b"object_type"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_id", b"_id"]) -> typing_extensions.Literal["id"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_name", b"_name", "_object_type", b"_object_type", "name", b"name", "object_type", b"object_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_name", b"_name", "_object_type", b"_object_type", "name", b"name", "object_type", b"object_type"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_name", b"_name"]) -> typing_extensions.Literal["name"] | None: ...
     @typing.overload
@@ -468,25 +399,19 @@ class ObjectIdentifier(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TYPE_FIELD_NUMBER: builtins.int
-    ID_FIELD_NUMBER: builtins.int
     KEY_FIELD_NUMBER: builtins.int
     type: builtins.str
     """object type"""
-    id: builtins.str
-    """internal object id (uuid)"""
     key: builtins.str
     """external object key (cs-string)"""
     def __init__(
         self,
         *,
         type: builtins.str | None = ...,
-        id: builtins.str | None = ...,
         key: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_id", b"_id", "_key", b"_key", "_type", b"_type", "id", b"id", "key", b"key", "type", b"type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_id", b"_id", "_key", b"_key", "_type", b"_type", "id", b"id", "key", b"key", "type", b"type"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_id", b"_id"]) -> typing_extensions.Literal["id"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_key", b"_key", "_type", b"_type", "key", b"key", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_key", b"_key", "_type", b"_type", "key", b"key", "type", b"type"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_key", b"_key"]) -> typing_extensions.Literal["key"] | None: ...
     @typing.overload
