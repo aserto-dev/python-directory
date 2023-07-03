@@ -61,11 +61,12 @@ class ReaderStub:
         aserto.directory.reader.v2.reader_pb2.CheckPermissionRequest,
         aserto.directory.reader.v2.reader_pb2.CheckPermissionResponse,
     ]
-    """check methods"""
+    """check permission method"""
     CheckRelation: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.CheckRelationRequest,
         aserto.directory.reader.v2.reader_pb2.CheckRelationResponse,
     ]
+    """check relation method"""
     GetGraph: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetGraphRequest,
         aserto.directory.reader.v2.reader_pb2.GetGraphResponse,
@@ -150,13 +151,14 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.CheckPermissionRequest,
         context: grpc.ServicerContext,
     ) -> aserto.directory.reader.v2.reader_pb2.CheckPermissionResponse:
-        """check methods"""
+        """check permission method"""
     @abc.abstractmethod
     def CheckRelation(
         self,
         request: aserto.directory.reader.v2.reader_pb2.CheckRelationRequest,
         context: grpc.ServicerContext,
-    ) -> aserto.directory.reader.v2.reader_pb2.CheckRelationResponse: ...
+    ) -> aserto.directory.reader.v2.reader_pb2.CheckRelationResponse:
+        """check relation method"""
     @abc.abstractmethod
     def GetGraph(
         self,

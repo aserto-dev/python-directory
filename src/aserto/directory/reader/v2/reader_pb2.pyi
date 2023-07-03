@@ -181,16 +181,21 @@ class GetObjectRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PARAM_FIELD_NUMBER: builtins.int
+    WITH_RELATIONS_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.ObjectIdentifier:
         """object selector"""
+    with_relations: builtins.bool
+    """materialize the object relations objects"""
     def __init__(
         self,
         *,
         param: aserto.directory.common.v2.common_pb2.ObjectIdentifier | None = ...,
+        with_relations: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["param", b"param"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["param", b"param"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "param", b"param", "with_relations", b"with_relations"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "param", b"param", "with_relations", b"with_relations"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_with_relations", b"_with_relations"]) -> typing_extensions.Literal["with_relations"] | None: ...
 
 global___GetObjectRequest = GetObjectRequest
 
@@ -199,16 +204,26 @@ class GetObjectResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESULT_FIELD_NUMBER: builtins.int
+    INCOMING_FIELD_NUMBER: builtins.int
+    OUTGOING_FIELD_NUMBER: builtins.int
     @property
     def result(self) -> aserto.directory.common.v2.common_pb2.Object:
         """object instance"""
+    @property
+    def incoming(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[aserto.directory.common.v2.common_pb2.Relation]:
+        """incoming object relations"""
+    @property
+    def outgoing(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[aserto.directory.common.v2.common_pb2.Relation]:
+        """outgoing object relations"""
     def __init__(
         self,
         *,
         result: aserto.directory.common.v2.common_pb2.Object | None = ...,
+        incoming: collections.abc.Iterable[aserto.directory.common.v2.common_pb2.Relation] | None = ...,
+        outgoing: collections.abc.Iterable[aserto.directory.common.v2.common_pb2.Relation] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["result", b"result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["result", b"result"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["incoming", b"incoming", "outgoing", b"outgoing", "result", b"result"]) -> None: ...
 
 global___GetObjectResponse = GetObjectResponse
 

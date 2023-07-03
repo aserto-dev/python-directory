@@ -161,14 +161,15 @@ class ReaderServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CheckPermission(self, request, context):
-        """check methods
+        """check permission method
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckRelation(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """check relation method
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
