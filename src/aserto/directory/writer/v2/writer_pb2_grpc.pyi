@@ -4,10 +4,21 @@ isort:skip_file
 """
 import abc
 import aserto.directory.writer.v2.writer_pb2
+import collections.abc
 import grpc
+import grpc.aio
+import typing
+
+_T = typing.TypeVar('_T')
+
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta):
+    ...
+
+class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore
+    ...
 
 class WriterStub:
-    def __init__(self, channel: grpc.Channel) -> None: ...
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     SetObjectType: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.SetObjectTypeRequest,
         aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse,
@@ -54,71 +65,118 @@ class WriterStub:
         aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse,
     ]
 
+class WriterAsyncStub:
+    SetObjectType: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.SetObjectTypeRequest,
+        aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse,
+    ]
+    """object type metadata methods"""
+    DeleteObjectType: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeRequest,
+        aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeResponse,
+    ]
+    SetRelationType: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.SetRelationTypeRequest,
+        aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse,
+    ]
+    """relation type metadata methods"""
+    DeleteRelationType: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeRequest,
+        aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeResponse,
+    ]
+    SetPermission: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.SetPermissionRequest,
+        aserto.directory.writer.v2.writer_pb2.SetPermissionResponse,
+    ]
+    """permission metadata methods"""
+    DeletePermission: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.DeletePermissionRequest,
+        aserto.directory.writer.v2.writer_pb2.DeletePermissionResponse,
+    ]
+    SetObject: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.SetObjectRequest,
+        aserto.directory.writer.v2.writer_pb2.SetObjectResponse,
+    ]
+    """object methods"""
+    DeleteObject: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.DeleteObjectRequest,
+        aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse,
+    ]
+    SetRelation: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.SetRelationRequest,
+        aserto.directory.writer.v2.writer_pb2.SetRelationResponse,
+    ]
+    """relation methods"""
+    DeleteRelation: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.writer.v2.writer_pb2.DeleteRelationRequest,
+        aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse,
+    ]
+
 class WriterServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def SetObjectType(
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetObjectTypeRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse:
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse]]:
         """object type metadata methods"""
     @abc.abstractmethod
     def DeleteObjectType(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeResponse: ...
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeResponse]]: ...
     @abc.abstractmethod
     def SetRelationType(
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetRelationTypeRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse:
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse]]:
         """relation type metadata methods"""
     @abc.abstractmethod
     def DeleteRelationType(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeResponse: ...
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeResponse]]: ...
     @abc.abstractmethod
     def SetPermission(
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetPermissionRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.SetPermissionResponse:
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetPermissionResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetPermissionResponse]]:
         """permission metadata methods"""
     @abc.abstractmethod
     def DeletePermission(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeletePermissionRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.DeletePermissionResponse: ...
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeletePermissionResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeletePermissionResponse]]: ...
     @abc.abstractmethod
     def SetObject(
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetObjectRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.SetObjectResponse:
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetObjectResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetObjectResponse]]:
         """object methods"""
     @abc.abstractmethod
     def DeleteObject(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeleteObjectRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse: ...
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse]]: ...
     @abc.abstractmethod
     def SetRelation(
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetRelationRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.SetRelationResponse:
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetRelationResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetRelationResponse]]:
         """relation methods"""
     @abc.abstractmethod
     def DeleteRelation(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeleteRelationRequest,
-        context: grpc.ServicerContext,
-    ) -> aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse: ...
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse]]: ...
 
-def add_WriterServicer_to_server(servicer: WriterServicer, server: grpc.Server) -> None: ...
+def add_WriterServicer_to_server(servicer: WriterServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

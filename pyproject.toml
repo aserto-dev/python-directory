@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aserto-directory"
-version = "0.21.0"
+version = "0.21.1"
 description = "gRPC client for Aserto Directory service instances"
 readme = "README.md"
 authors = ["Aserto, Inc. <pypi@aserto.com>"]
@@ -15,9 +15,11 @@ classifiers = [
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Topic :: Software Development :: Libraries",
   "Typing :: Typed",
 ]
@@ -27,13 +29,12 @@ packages = [
 
 
 [tool.poetry.dependencies]
-python = "^3.7"
-typing-extensions = "^3.10.0"
+python = ">=3.8"
 
 [tool.poetry.dev-dependencies]
-mypy = "^0.910"
-mypy-protobuf = "^3.3.0"
-black = "^22.10.0"
+mypy = "^1.6.1"
+mypy-protobuf = "^3.5.0"
+black = "^23.10.1"
 isort = "^5.10.1"
 
 [tool.mypy]
