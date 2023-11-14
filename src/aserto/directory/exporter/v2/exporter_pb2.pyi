@@ -37,7 +37,7 @@ class _OptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     OPTION_DATA_OBJECTS: _Option.ValueType  # 8
     """object instances"""
     OPTION_DATA_RELATIONS: _Option.ValueType  # 16
-    """relation instances with id values"""
+    """relation instances"""
     OPTION_DATA_RELATIONS_WITH_KEYS: _Option.ValueType  # 32
     """relation instances with key values"""
     OPTION_DATA: _Option.ValueType  # 24
@@ -64,7 +64,7 @@ OPTION_METADATA: Option.ValueType  # 7
 OPTION_DATA_OBJECTS: Option.ValueType  # 8
 """object instances"""
 OPTION_DATA_RELATIONS: Option.ValueType  # 16
-"""relation instances with id values"""
+"""relation instances"""
 OPTION_DATA_RELATIONS_WITH_KEYS: Option.ValueType  # 32
 """relation instances with key values"""
 OPTION_DATA: Option.ValueType  # 24

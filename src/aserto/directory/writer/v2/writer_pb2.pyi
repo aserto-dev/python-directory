@@ -23,7 +23,7 @@ class SetObjectTypeRequest(google.protobuf.message.Message):
     OBJECT_TYPE_FIELD_NUMBER: builtins.int
     @property
     def object_type(self) -> aserto.directory.common.v2.common_pb2.ObjectType:
-        """"""
+        """object type instance"""
     def __init__(
         self,
         *,
@@ -59,7 +59,7 @@ class DeleteObjectTypeRequest(google.protobuf.message.Message):
     PARAM_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.ObjectTypeIdentifier:
-        """"""
+        """object type identifier"""
     def __init__(
         self,
         *,
@@ -95,7 +95,7 @@ class SetRelationTypeRequest(google.protobuf.message.Message):
     RELATION_TYPE_FIELD_NUMBER: builtins.int
     @property
     def relation_type(self) -> aserto.directory.common.v2.common_pb2.RelationType:
-        """"""
+        """relation type instance"""
     def __init__(
         self,
         *,
@@ -131,7 +131,7 @@ class DeleteRelationTypeRequest(google.protobuf.message.Message):
     PARAM_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.RelationTypeIdentifier:
-        """"""
+        """relation type identifier"""
     def __init__(
         self,
         *,
@@ -167,7 +167,7 @@ class SetPermissionRequest(google.protobuf.message.Message):
     PERMISSION_FIELD_NUMBER: builtins.int
     @property
     def permission(self) -> aserto.directory.common.v2.common_pb2.Permission:
-        """"""
+        """permission instance"""
     def __init__(
         self,
         *,
@@ -203,7 +203,7 @@ class DeletePermissionRequest(google.protobuf.message.Message):
     PARAM_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.PermissionIdentifier:
-        """"""
+        """permission identifier"""
     def __init__(
         self,
         *,
@@ -239,7 +239,7 @@ class SetObjectRequest(google.protobuf.message.Message):
     OBJECT_FIELD_NUMBER: builtins.int
     @property
     def object(self) -> aserto.directory.common.v2.common_pb2.Object:
-        """"""
+        """object instance"""
     def __init__(
         self,
         *,
@@ -273,16 +273,21 @@ class DeleteObjectRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PARAM_FIELD_NUMBER: builtins.int
+    WITH_RELATIONS_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.ObjectIdentifier:
-        """"""
+        """object identifier"""
+    with_relations: builtins.bool
+    """delete object relations, both object and subject relations."""
     def __init__(
         self,
         *,
         param: aserto.directory.common.v2.common_pb2.ObjectIdentifier | None = ...,
+        with_relations: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["param", b"param"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["param", b"param"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "param", b"param", "with_relations", b"with_relations"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "param", b"param", "with_relations", b"with_relations"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_with_relations", b"_with_relations"]) -> typing_extensions.Literal["with_relations"] | None: ...
 
 global___DeleteObjectRequest = DeleteObjectRequest
 
@@ -311,7 +316,7 @@ class SetRelationRequest(google.protobuf.message.Message):
     RELATION_FIELD_NUMBER: builtins.int
     @property
     def relation(self) -> aserto.directory.common.v2.common_pb2.Relation:
-        """"""
+        """relation instance"""
     def __init__(
         self,
         *,
@@ -347,7 +352,7 @@ class DeleteRelationRequest(google.protobuf.message.Message):
     PARAM_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.RelationIdentifier:
-        """"""
+        """relation identifier"""
     def __init__(
         self,
         *,

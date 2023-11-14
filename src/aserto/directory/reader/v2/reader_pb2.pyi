@@ -182,19 +182,24 @@ class GetObjectRequest(google.protobuf.message.Message):
 
     PARAM_FIELD_NUMBER: builtins.int
     WITH_RELATIONS_FIELD_NUMBER: builtins.int
+    PAGE_FIELD_NUMBER: builtins.int
     @property
     def param(self) -> aserto.directory.common.v2.common_pb2.ObjectIdentifier:
         """object selector"""
     with_relations: builtins.bool
     """materialize the object relations objects"""
+    @property
+    def page(self) -> aserto.directory.common.v2.common_pb2.PaginationRequest:
+        """pagination request"""
     def __init__(
         self,
         *,
         param: aserto.directory.common.v2.common_pb2.ObjectIdentifier | None = ...,
         with_relations: builtins.bool | None = ...,
+        page: aserto.directory.common.v2.common_pb2.PaginationRequest | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "param", b"param", "with_relations", b"with_relations"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "param", b"param", "with_relations", b"with_relations"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "page", b"page", "param", b"param", "with_relations", b"with_relations"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_with_relations", b"_with_relations", "page", b"page", "param", b"param", "with_relations", b"with_relations"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_with_relations", b"_with_relations"]) -> typing_extensions.Literal["with_relations"] | None: ...
 
 global___GetObjectRequest = GetObjectRequest
@@ -204,26 +209,26 @@ class GetObjectResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESULT_FIELD_NUMBER: builtins.int
-    INCOMING_FIELD_NUMBER: builtins.int
-    OUTGOING_FIELD_NUMBER: builtins.int
+    RELATIONS_FIELD_NUMBER: builtins.int
+    PAGE_FIELD_NUMBER: builtins.int
     @property
     def result(self) -> aserto.directory.common.v2.common_pb2.Object:
         """object instance"""
     @property
-    def incoming(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[aserto.directory.common.v2.common_pb2.Relation]:
-        """incoming object relations"""
+    def relations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[aserto.directory.common.v2.common_pb2.Relation]:
+        """object relations"""
     @property
-    def outgoing(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[aserto.directory.common.v2.common_pb2.Relation]:
-        """outgoing object relations"""
+    def page(self) -> aserto.directory.common.v2.common_pb2.PaginationResponse:
+        """pagination response"""
     def __init__(
         self,
         *,
         result: aserto.directory.common.v2.common_pb2.Object | None = ...,
-        incoming: collections.abc.Iterable[aserto.directory.common.v2.common_pb2.Relation] | None = ...,
-        outgoing: collections.abc.Iterable[aserto.directory.common.v2.common_pb2.Relation] | None = ...,
+        relations: collections.abc.Iterable[aserto.directory.common.v2.common_pb2.Relation] | None = ...,
+        page: aserto.directory.common.v2.common_pb2.PaginationResponse | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["result", b"result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["incoming", b"incoming", "outgoing", b"outgoing", "result", b"result"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["page", b"page", "result", b"result"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["page", b"page", "relations", b"relations", "result", b"result"]) -> None: ...
 
 global___GetObjectResponse = GetObjectResponse
 
@@ -532,7 +537,7 @@ class CheckPermissionResponse(google.protobuf.message.Message):
     CHECK_FIELD_NUMBER: builtins.int
     TRACE_FIELD_NUMBER: builtins.int
     check: builtins.bool
-    """check result (BOOL)"""
+    """check result"""
     @property
     def trace(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """trace information"""
@@ -585,7 +590,7 @@ class CheckRelationResponse(google.protobuf.message.Message):
     CHECK_FIELD_NUMBER: builtins.int
     TRACE_FIELD_NUMBER: builtins.int
     check: builtins.bool
-    """check result (BOOL)"""
+    """check result"""
     @property
     def trace(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """trace information"""
@@ -606,7 +611,7 @@ class CheckResponse(google.protobuf.message.Message):
     CHECK_FIELD_NUMBER: builtins.int
     TRACE_FIELD_NUMBER: builtins.int
     check: builtins.bool
-    """check result (BOOL)"""
+    """check result"""
     @property
     def trace(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """trace information"""
