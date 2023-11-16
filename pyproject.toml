@@ -30,14 +30,15 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.8"
+grpcio = ">=1.58.0"
+typing-extensions = ">=3.10.0"
 
 [tool.poetry.dev-dependencies]
-mypy = "^1.6.1"
-mypy-protobuf = "^3.5.0"
 black = "^23.10.1"
 isort = "^5.10.1"
 
 [tool.mypy]
+explicit_package_bases = true
 show_error_codes = true
 check_untyped_defs = false
 disallow_any_decorated = false
