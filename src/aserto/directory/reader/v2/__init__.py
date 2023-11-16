@@ -2,7 +2,6 @@
 
 from aserto.directory.reader.v2.reader_pb2_grpc import (
     ReaderStub,
-    ReaderAsyncStub,
     ReaderServicer,
 )
 
@@ -40,7 +39,6 @@ from aserto.directory.reader.v2.reader_pb2 import (
 
 __all__ = [
     "ReaderStub",
-    "ReaderAsyncStub",
     "ReaderServicer",
     "GetObjectTypeRequest",
     "GetObjectTypeResponse",

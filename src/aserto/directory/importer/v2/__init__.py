@@ -9,7 +9,6 @@ from aserto.directory.importer.v2.importer_pb2 import (
 
 from aserto.directory.importer.v2.importer_pb2_grpc import (
     ImporterStub,
-    ImporterAsyncStub,
     ImporterServicer,
 )
 
@@ -19,6 +18,5 @@ __all__ = [
     "ImportResponse",
     "ImportCounter",
     "ImporterStub",
-    "ImporterAsyncStub",
     "ImporterServicer",
 ]
