@@ -2,7 +2,6 @@
 
 from aserto.directory.writer.v3.writer_pb2_grpc import (
     WriterStub,
-    WriterAsyncStub,
     WriterServicer,
 )
 
@@ -19,7 +18,6 @@ from aserto.directory.writer.v3.writer_pb2 import (
 
 __all__ = [
     "WriterStub",
-    "WriterAsyncStub",
     "WriterServicer",
     "SetObjectRequest",
     "SetObjectResponse",

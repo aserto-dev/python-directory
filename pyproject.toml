@@ -25,40 +25,21 @@ classifiers = [
 ]
 packages = [
     { include = "aserto", from = "src" },
+    { include = "google", from = "src" },
+    { include = "buf", from = "src" },
 ]
 
 
 [tool.poetry.dependencies]
-python = ">=3.8"
+python = ">=3.8,<4"
+grpcio = "^1.49"
+protobuf = "^4.21.0"
+protovalidate = { version = "^0.3.0", python = ">=3.11"}
 
 [tool.poetry.dev-dependencies]
-mypy = "^1.6.1"
-mypy-protobuf = "^3.5.0"
-black = "^23.10.1"
-isort = "^5.10.1"
-
-[tool.mypy]
-show_error_codes = true
-check_untyped_defs = false
-disallow_any_decorated = false
-disallow_any_explicit = false
-disallow_any_expr = false
-disallow_any_generics = false
-disallow_any_unimported = true
-disallow_incomplete_defs = true
-disallow_subclassing_any = true
-disallow_untyped_calls = true
-disallow_untyped_decorators = true
-disallow_untyped_defs = true
-implicit_reexport = true
-no_implicit_optional = true
-strict_equality = true
-strict_optional = false
-warn_no_return = true
-warn_redundant_casts = true
-warn_return_any = true
-warn_unreachable = true
-warn_unused_ignores = true
+black = "^23.11.0"
+isort = "^5.10.0"
+pyright = "^1.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

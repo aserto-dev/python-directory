@@ -99,6 +99,7 @@ func gen(bufImage, fileSources string) error {
 	for bufImage, clientFiles := range files {
 		err = buf.Run(
 			buf.AddArg("generate"),
+			buf.AddArg("--include-imports"),
 			buf.AddArg("--template"),
 			buf.AddArg(filepath.Join("buf", "buf.gen.yaml")),
 			buf.AddArg(bufImage),
