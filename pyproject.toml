@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aserto-directory"
-version = "0.30.0"
+version = "0.30.1"
 description = "gRPC client for Aserto Directory service instances"
 readme = "README.md"
 authors = ["Aserto, Inc. <pypi@aserto.com>"]
