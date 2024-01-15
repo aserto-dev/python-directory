@@ -94,7 +94,7 @@ class GetRelationResponse(_message.Message):
     def __init__(self, result: _Optional[_Union[_common_pb2.Relation, _Mapping]] = ..., objects: _Optional[_Mapping[str, _common_pb2.Object]] = ...) -> None: ...
 
 class GetRelationsRequest(_message.Message):
-    __slots__ = ("object_type", "object_id", "relation", "subject_type", "subject_id", "subject_relation", "with_objects", "page")
+    __slots__ = ("object_type", "object_id", "relation", "subject_type", "subject_id", "subject_relation", "with_objects", "with_empty_subject_relation", "page")
     OBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
     OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
     RELATION_FIELD_NUMBER: _ClassVar[int]
@@ -102,6 +102,7 @@ class GetRelationsRequest(_message.Message):
     SUBJECT_ID_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_RELATION_FIELD_NUMBER: _ClassVar[int]
     WITH_OBJECTS_FIELD_NUMBER: _ClassVar[int]
+    WITH_EMPTY_SUBJECT_RELATION_FIELD_NUMBER: _ClassVar[int]
     PAGE_FIELD_NUMBER: _ClassVar[int]
     object_type: str
     object_id: str
@@ -110,8 +111,9 @@ class GetRelationsRequest(_message.Message):
     subject_id: str
     subject_relation: str
     with_objects: bool
+    with_empty_subject_relation: bool
     page: _common_pb2.PaginationRequest
-    def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ..., with_objects: bool = ..., page: _Optional[_Union[_common_pb2.PaginationRequest, _Mapping]] = ...) -> None: ...
+    def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ..., with_objects: bool = ..., with_empty_subject_relation: bool = ..., page: _Optional[_Union[_common_pb2.PaginationRequest, _Mapping]] = ...) -> None: ...
 
 class GetRelationsResponse(_message.Message):
     __slots__ = ("results", "objects", "page")
