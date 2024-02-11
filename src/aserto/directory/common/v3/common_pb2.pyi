@@ -79,6 +79,22 @@ class ObjectIdentifier(_message.Message):
     object_id: str
     def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ...) -> None: ...
 
+class RelationIdentifier(_message.Message):
+    __slots__ = ("object_type", "object_id", "relation", "subject_type", "subject_id", "subject_relation")
+    OBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
+    OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    RELATION_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBJECT_RELATION_FIELD_NUMBER: _ClassVar[int]
+    object_type: str
+    object_id: str
+    relation: str
+    subject_type: str
+    subject_id: str
+    subject_relation: str
+    def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ...) -> None: ...
+
 class PaginationRequest(_message.Message):
     __slots__ = ("size", "token")
     SIZE_FIELD_NUMBER: _ClassVar[int]
@@ -92,13 +108,3 @@ class PaginationResponse(_message.Message):
     NEXT_TOKEN_FIELD_NUMBER: _ClassVar[int]
     next_token: str
     def __init__(self, next_token: _Optional[str] = ...) -> None: ...
-
-class ObjectType(_message.Message):
-    __slots__ = ("name", "relations", "permissions")
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    RELATIONS_FIELD_NUMBER: _ClassVar[int]
-    PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    relations: _containers.RepeatedScalarFieldContainer[str]
-    permissions: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, name: _Optional[str] = ..., relations: _Optional[_Iterable[str]] = ..., permissions: _Optional[_Iterable[str]] = ...) -> None: ...

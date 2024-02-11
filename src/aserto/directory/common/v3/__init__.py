@@ -5,9 +5,9 @@ from aserto.directory.common.v3.common_pb2 import (
     Relation,
     ObjectDependency,
     ObjectIdentifier,
+    RelationIdentifier,
     PaginationRequest,
     PaginationResponse,
-    ObjectType,
 )
 
 __all__ = [
@@ -15,7 +15,7 @@ __all__ = [
     "Relation",
     "ObjectDependency",
     "ObjectIdentifier",
+    "RelationIdentifier",
     "PaginationRequest",
     "PaginationResponse",
-    "ObjectType",
 ]
