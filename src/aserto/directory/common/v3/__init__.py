@@ -3,7 +3,6 @@
 from aserto.directory.common.v3.common_pb2 import (
     Object,
     Relation,
-    ObjectDependency,
     ObjectIdentifier,
     RelationIdentifier,
     PaginationRequest,
@@ -13,7 +12,6 @@ from aserto.directory.common.v3.common_pb2 import (
 __all__ = [
     "Object",
     "Relation",
-    "ObjectDependency",
     "ObjectIdentifier",
     "RelationIdentifier",
     "PaginationRequest",

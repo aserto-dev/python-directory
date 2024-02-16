@@ -1,5 +1,6 @@
 from google.api import annotations_pb2 as _annotations_pb2
 from google.api import field_behavior_pb2 as _field_behavior_pb2
+from google.protobuf import struct_pb2 as _struct_pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as _annotations_pb2_1
 from buf.validate import validate_pb2 as _validate_pb2
 from aserto.directory.common.v3 import common_pb2 as _common_pb2
@@ -205,27 +206,31 @@ class CheckRelationResponse(_message.Message):
     def __init__(self, check: bool = ..., trace: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GetGraphRequest(_message.Message):
-    __slots__ = ("anchor_type", "anchor_id", "object_type", "object_id", "relation", "subject_type", "subject_id", "subject_relation")
-    ANCHOR_TYPE_FIELD_NUMBER: _ClassVar[int]
-    ANCHOR_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("object_type", "object_id", "relation", "subject_type", "subject_id", "subject_relation", "explain", "trace")
     OBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
     OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
     RELATION_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_ID_FIELD_NUMBER: _ClassVar[int]
     SUBJECT_RELATION_FIELD_NUMBER: _ClassVar[int]
-    anchor_type: str
-    anchor_id: str
+    EXPLAIN_FIELD_NUMBER: _ClassVar[int]
+    TRACE_FIELD_NUMBER: _ClassVar[int]
     object_type: str
     object_id: str
     relation: str
     subject_type: str
     subject_id: str
     subject_relation: str
-    def __init__(self, anchor_type: _Optional[str] = ..., anchor_id: _Optional[str] = ..., object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ...) -> None: ...
+    explain: bool
+    trace: bool
+    def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ..., explain: bool = ..., trace: bool = ...) -> None: ...
 
 class GetGraphResponse(_message.Message):
-    __slots__ = ("results",)
+    __slots__ = ("results", "explanation", "trace")
     RESULTS_FIELD_NUMBER: _ClassVar[int]
-    results: _containers.RepeatedCompositeFieldContainer[_common_pb2.ObjectDependency]
-    def __init__(self, results: _Optional[_Iterable[_Union[_common_pb2.ObjectDependency, _Mapping]]] = ...) -> None: ...
+    EXPLANATION_FIELD_NUMBER: _ClassVar[int]
+    TRACE_FIELD_NUMBER: _ClassVar[int]
+    results: _containers.RepeatedCompositeFieldContainer[_common_pb2.ObjectIdentifier]
+    explanation: _struct_pb2.Struct
+    trace: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, results: _Optional[_Iterable[_Union[_common_pb2.ObjectIdentifier, _Mapping]]] = ..., explanation: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., trace: _Optional[_Iterable[str]] = ...) -> None: ...

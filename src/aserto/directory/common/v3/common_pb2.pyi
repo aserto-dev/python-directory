@@ -2,10 +2,9 @@ from google.api import field_behavior_pb2 as _field_behavior_pb2
 from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from buf.validate import validate_pb2 as _validate_pb2
-from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -48,28 +47,6 @@ class Relation(_message.Message):
     updated_at: _timestamp_pb2.Timestamp
     etag: str
     def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ..., created_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., updated_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., etag: _Optional[str] = ...) -> None: ...
-
-class ObjectDependency(_message.Message):
-    __slots__ = ("object_type", "object_id", "relation", "subject_type", "subject_id", "subject_relation", "depth", "is_cycle", "path")
-    OBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
-    OBJECT_ID_FIELD_NUMBER: _ClassVar[int]
-    RELATION_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_TYPE_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_ID_FIELD_NUMBER: _ClassVar[int]
-    SUBJECT_RELATION_FIELD_NUMBER: _ClassVar[int]
-    DEPTH_FIELD_NUMBER: _ClassVar[int]
-    IS_CYCLE_FIELD_NUMBER: _ClassVar[int]
-    PATH_FIELD_NUMBER: _ClassVar[int]
-    object_type: str
-    object_id: str
-    relation: str
-    subject_type: str
-    subject_id: str
-    subject_relation: str
-    depth: int
-    is_cycle: bool
-    path: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., subject_relation: _Optional[str] = ..., depth: _Optional[int] = ..., is_cycle: bool = ..., path: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ObjectIdentifier(_message.Message):
     __slots__ = ("object_type", "object_id")
