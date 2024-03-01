@@ -14,6 +14,9 @@ DESCRIPTOR: _descriptor.FileDescriptor
 class Ignore(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     IGNORE_UNSPECIFIED: _ClassVar[Ignore]
+    IGNORE_IF_UNPOPULATED: _ClassVar[Ignore]
+    IGNORE_IF_DEFAULT_VALUE: _ClassVar[Ignore]
+    IGNORE_ALWAYS: _ClassVar[Ignore]
     IGNORE_EMPTY: _ClassVar[Ignore]
     IGNORE_DEFAULT: _ClassVar[Ignore]
 
@@ -23,6 +26,9 @@ class KnownRegex(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     KNOWN_REGEX_HTTP_HEADER_NAME: _ClassVar[KnownRegex]
     KNOWN_REGEX_HTTP_HEADER_VALUE: _ClassVar[KnownRegex]
 IGNORE_UNSPECIFIED: Ignore
+IGNORE_IF_UNPOPULATED: Ignore
+IGNORE_IF_DEFAULT_VALUE: Ignore
+IGNORE_ALWAYS: Ignore
 IGNORE_EMPTY: Ignore
 IGNORE_DEFAULT: Ignore
 KNOWN_REGEX_UNSPECIFIED: KnownRegex
@@ -50,11 +56,9 @@ class OneofConstraints(_message.Message):
     def __init__(self, required: bool = ...) -> None: ...
 
 class FieldConstraints(_message.Message):
-    __slots__ = ("cel", "skipped", "required", "ignore_empty", "ignore", "float", "double", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64", "sfixed32", "sfixed64", "bool", "string", "bytes", "enum", "repeated", "map", "any", "duration", "timestamp")
+    __slots__ = ("cel", "required", "ignore", "float", "double", "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64", "sfixed32", "sfixed64", "bool", "string", "bytes", "enum", "repeated", "map", "any", "duration", "timestamp", "skipped", "ignore_empty")
     CEL_FIELD_NUMBER: _ClassVar[int]
-    SKIPPED_FIELD_NUMBER: _ClassVar[int]
     REQUIRED_FIELD_NUMBER: _ClassVar[int]
-    IGNORE_EMPTY_FIELD_NUMBER: _ClassVar[int]
     IGNORE_FIELD_NUMBER: _ClassVar[int]
     FLOAT_FIELD_NUMBER: _ClassVar[int]
     DOUBLE_FIELD_NUMBER: _ClassVar[int]
@@ -77,10 +81,10 @@ class FieldConstraints(_message.Message):
     ANY_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    SKIPPED_FIELD_NUMBER: _ClassVar[int]
+    IGNORE_EMPTY_FIELD_NUMBER: _ClassVar[int]
     cel: _containers.RepeatedCompositeFieldContainer[_expression_pb2.Constraint]
-    skipped: bool
     required: bool
-    ignore_empty: bool
     ignore: Ignore
     float: FloatRules
     double: DoubleRules
@@ -103,7 +107,9 @@ class FieldConstraints(_message.Message):
     any: AnyRules
     duration: DurationRules
     timestamp: TimestampRules
-    def __init__(self, cel: _Optional[_Iterable[_Union[_expression_pb2.Constraint, _Mapping]]] = ..., skipped: bool = ..., required: bool = ..., ignore_empty: bool = ..., ignore: _Optional[_Union[Ignore, str]] = ..., float: _Optional[_Union[FloatRules, _Mapping]] = ..., double: _Optional[_Union[DoubleRules, _Mapping]] = ..., int32: _Optional[_Union[Int32Rules, _Mapping]] = ..., int64: _Optional[_Union[Int64Rules, _Mapping]] = ..., uint32: _Optional[_Union[UInt32Rules, _Mapping]] = ..., uint64: _Optional[_Union[UInt64Rules, _Mapping]] = ..., sint32: _Optional[_Union[SInt32Rules, _Mapping]] = ..., sint64: _Optional[_Union[SInt64Rules, _Mapping]] = ..., fixed32: _Optional[_Union[Fixed32Rules, _Mapping]] = ..., fixed64: _Optional[_Union[Fixed64Rules, _Mapping]] = ..., sfixed32: _Optional[_Union[SFixed32Rules, _Mapping]] = ..., sfixed64: _Optional[_Union[SFixed64Rules, _Mapping]] = ..., bool: _Optional[_Union[BoolRules, _Mapping]] = ..., string: _Optional[_Union[StringRules, _Mapping]] = ..., bytes: _Optional[_Union[BytesRules, _Mapping]] = ..., enum: _Optional[_Union[EnumRules, _Mapping]] = ..., repeated: _Optional[_Union[RepeatedRules, _Mapping]] = ..., map: _Optional[_Union[MapRules, _Mapping]] = ..., any: _Optional[_Union[AnyRules, _Mapping]] = ..., duration: _Optional[_Union[DurationRules, _Mapping]] = ..., timestamp: _Optional[_Union[TimestampRules, _Mapping]] = ...) -> None: ...
+    skipped: bool
+    ignore_empty: bool
+    def __init__(self, cel: _Optional[_Iterable[_Union[_expression_pb2.Constraint, _Mapping]]] = ..., required: bool = ..., ignore: _Optional[_Union[Ignore, str]] = ..., float: _Optional[_Union[FloatRules, _Mapping]] = ..., double: _Optional[_Union[DoubleRules, _Mapping]] = ..., int32: _Optional[_Union[Int32Rules, _Mapping]] = ..., int64: _Optional[_Union[Int64Rules, _Mapping]] = ..., uint32: _Optional[_Union[UInt32Rules, _Mapping]] = ..., uint64: _Optional[_Union[UInt64Rules, _Mapping]] = ..., sint32: _Optional[_Union[SInt32Rules, _Mapping]] = ..., sint64: _Optional[_Union[SInt64Rules, _Mapping]] = ..., fixed32: _Optional[_Union[Fixed32Rules, _Mapping]] = ..., fixed64: _Optional[_Union[Fixed64Rules, _Mapping]] = ..., sfixed32: _Optional[_Union[SFixed32Rules, _Mapping]] = ..., sfixed64: _Optional[_Union[SFixed64Rules, _Mapping]] = ..., bool: _Optional[_Union[BoolRules, _Mapping]] = ..., string: _Optional[_Union[StringRules, _Mapping]] = ..., bytes: _Optional[_Union[BytesRules, _Mapping]] = ..., enum: _Optional[_Union[EnumRules, _Mapping]] = ..., repeated: _Optional[_Union[RepeatedRules, _Mapping]] = ..., map: _Optional[_Union[MapRules, _Mapping]] = ..., any: _Optional[_Union[AnyRules, _Mapping]] = ..., duration: _Optional[_Union[DurationRules, _Mapping]] = ..., timestamp: _Optional[_Union[TimestampRules, _Mapping]] = ..., skipped: bool = ..., ignore_empty: bool = ...) -> None: ...
 
 class FloatRules(_message.Message):
     __slots__ = ("const", "lt", "lte", "gt", "gte", "not_in", "finite")
