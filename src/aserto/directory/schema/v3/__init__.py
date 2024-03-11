@@ -7,14 +7,14 @@ from aserto.directory.schema.v3.tenant_pb2 import (
     GuideState,
 )
 
-from aserto.directory.schema.v3.identity_pb2 import (
-    IdentityKind,
-    IdentityProperties,
-)
-
 from aserto.directory.schema.v3.user_pb2 import (
     UserStatus,
     UserProperties,
+)
+
+from aserto.directory.schema.v3.identity_pb2 import (
+    IdentityKind,
+    IdentityProperties,
 )
 
 from aserto.directory.schema.v3.group_pb2 import (
@@ -26,9 +26,9 @@ __all__ = [
     "TenantProperties",
     "AccountProperties",
     "GuideState",
-    "IdentityKind",
-    "IdentityProperties",
     "UserStatus",
     "UserProperties",
+    "IdentityKind",
+    "IdentityProperties",
     "GroupProperties",
 ]
