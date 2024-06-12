@@ -18,7 +18,7 @@ class ExporterStub(object):
                 '/aserto.directory.exporter.v2.Exporter/Export',
                 request_serializer=aserto_dot_directory_dot_exporter_dot_v2_dot_exporter__pb2.ExportRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_exporter_dot_v2_dot_exporter__pb2.ExportResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class ExporterServicer(object):
@@ -42,6 +42,7 @@ def add_ExporterServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'aserto.directory.exporter.v2.Exporter', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('aserto.directory.exporter.v2.Exporter', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -59,8 +60,18 @@ class Exporter(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/aserto.directory.exporter.v2.Exporter/Export',
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/aserto.directory.exporter.v2.Exporter/Export',
             aserto_dot_directory_dot_exporter_dot_v2_dot_exporter__pb2.ExportRequest.SerializeToString,
             aserto_dot_directory_dot_exporter_dot_v2_dot_exporter__pb2.ExportResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

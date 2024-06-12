@@ -18,22 +18,22 @@ class AssertionStub(object):
                 '/aserto.directory.assertion.v3.Assertion/GetAssertion',
                 request_serializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.GetAssertionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.GetAssertionResponse.FromString,
-                )
+                _registered_method=True)
         self.ListAssertions = channel.unary_unary(
                 '/aserto.directory.assertion.v3.Assertion/ListAssertions',
                 request_serializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.ListAssertionsRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.ListAssertionsResponse.FromString,
-                )
+                _registered_method=True)
         self.SetAssertion = channel.unary_unary(
                 '/aserto.directory.assertion.v3.Assertion/SetAssertion',
                 request_serializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.SetAssertionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.SetAssertionResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteAssertion = channel.unary_unary(
                 '/aserto.directory.assertion.v3.Assertion/DeleteAssertion',
                 request_serializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.DeleteAssertionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.DeleteAssertionResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class AssertionServicer(object):
@@ -90,6 +90,7 @@ def add_AssertionServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'aserto.directory.assertion.v3.Assertion', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('aserto.directory.assertion.v3.Assertion', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -107,11 +108,21 @@ class Assertion(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.assertion.v3.Assertion/GetAssertion',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.assertion.v3.Assertion/GetAssertion',
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.GetAssertionRequest.SerializeToString,
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.GetAssertionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ListAssertions(request,
@@ -124,11 +135,21 @@ class Assertion(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.assertion.v3.Assertion/ListAssertions',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.assertion.v3.Assertion/ListAssertions',
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.ListAssertionsRequest.SerializeToString,
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.ListAssertionsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetAssertion(request,
@@ -141,11 +162,21 @@ class Assertion(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.assertion.v3.Assertion/SetAssertion',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.assertion.v3.Assertion/SetAssertion',
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.SetAssertionRequest.SerializeToString,
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.SetAssertionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteAssertion(request,
@@ -158,8 +189,18 @@ class Assertion(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.assertion.v3.Assertion/DeleteAssertion',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.assertion.v3.Assertion/DeleteAssertion',
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.DeleteAssertionRequest.SerializeToString,
             aserto_dot_directory_dot_assertion_dot_v3_dot_assertion__pb2.DeleteAssertionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

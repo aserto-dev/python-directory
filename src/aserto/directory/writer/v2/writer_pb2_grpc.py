@@ -18,52 +18,52 @@ class WriterStub(object):
                 '/aserto.directory.writer.v2.Writer/SetObjectType',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectTypeRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectTypeResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteObjectType = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/DeleteObjectType',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectTypeRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectTypeResponse.FromString,
-                )
+                _registered_method=True)
         self.SetRelationType = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/SetRelationType',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationTypeRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationTypeResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteRelationType = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/DeleteRelationType',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationTypeRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationTypeResponse.FromString,
-                )
+                _registered_method=True)
         self.SetPermission = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/SetPermission',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetPermissionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetPermissionResponse.FromString,
-                )
+                _registered_method=True)
         self.DeletePermission = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/DeletePermission',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeletePermissionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeletePermissionResponse.FromString,
-                )
+                _registered_method=True)
         self.SetObject = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/SetObject',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteObject = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/DeleteObject',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectResponse.FromString,
-                )
+                _registered_method=True)
         self.SetRelation = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/SetRelation',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteRelation = channel.unary_unary(
                 '/aserto.directory.writer.v2.Writer/DeleteRelation',
                 request_serializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class WriterServicer(object):
@@ -191,6 +191,7 @@ def add_WriterServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'aserto.directory.writer.v2.Writer', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('aserto.directory.writer.v2.Writer', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -208,11 +209,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/SetObjectType',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/SetObjectType',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectTypeRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectTypeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteObjectType(request,
@@ -225,11 +236,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/DeleteObjectType',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/DeleteObjectType',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectTypeRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectTypeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetRelationType(request,
@@ -242,11 +263,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/SetRelationType',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/SetRelationType',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationTypeRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationTypeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteRelationType(request,
@@ -259,11 +290,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/DeleteRelationType',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/DeleteRelationType',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationTypeRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationTypeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetPermission(request,
@@ -276,11 +317,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/SetPermission',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/SetPermission',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetPermissionRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetPermissionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeletePermission(request,
@@ -293,11 +344,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/DeletePermission',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/DeletePermission',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeletePermissionRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeletePermissionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetObject(request,
@@ -310,11 +371,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/SetObject',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/SetObject',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetObjectResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteObject(request,
@@ -327,11 +398,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/DeleteObject',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/DeleteObject',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteObjectResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetRelation(request,
@@ -344,11 +425,21 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/SetRelation',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/SetRelation',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.SetRelationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteRelation(request,
@@ -361,8 +452,18 @@ class Writer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.writer.v2.Writer/DeleteRelation',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.writer.v2.Writer/DeleteRelation',
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationRequest.SerializeToString,
             aserto_dot_directory_dot_writer_dot_v2_dot_writer__pb2.DeleteRelationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

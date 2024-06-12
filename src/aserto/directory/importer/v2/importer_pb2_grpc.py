@@ -18,7 +18,7 @@ class ImporterStub(object):
                 '/aserto.directory.importer.v2.Importer/Import',
                 request_serializer=aserto_dot_directory_dot_importer_dot_v2_dot_importer__pb2.ImportRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_importer_dot_v2_dot_importer__pb2.ImportResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class ImporterServicer(object):
@@ -42,6 +42,7 @@ def add_ImporterServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'aserto.directory.importer.v2.Importer', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('aserto.directory.importer.v2.Importer', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -59,8 +60,18 @@ class Importer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(request_iterator, target, '/aserto.directory.importer.v2.Importer/Import',
+        return grpc.experimental.stream_stream(
+            request_iterator,
+            target,
+            '/aserto.directory.importer.v2.Importer/Import',
             aserto_dot_directory_dot_importer_dot_v2_dot_importer__pb2.ImportRequest.SerializeToString,
             aserto_dot_directory_dot_importer_dot_v2_dot_importer__pb2.ImportResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

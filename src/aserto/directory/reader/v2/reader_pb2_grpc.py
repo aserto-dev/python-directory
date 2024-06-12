@@ -18,72 +18,72 @@ class ReaderStub(object):
                 '/aserto.directory.reader.v2.Reader/GetObjectType',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypeRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypeResponse.FromString,
-                )
+                _registered_method=True)
         self.GetObjectTypes = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetObjectTypes',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypesRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypesResponse.FromString,
-                )
+                _registered_method=True)
         self.GetRelationType = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetRelationType',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypeRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypeResponse.FromString,
-                )
+                _registered_method=True)
         self.GetRelationTypes = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetRelationTypes',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypesRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypesResponse.FromString,
-                )
+                _registered_method=True)
         self.GetPermission = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetPermission',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionResponse.FromString,
-                )
+                _registered_method=True)
         self.GetPermissions = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetPermissions',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionsRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionsResponse.FromString,
-                )
+                _registered_method=True)
         self.GetObject = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetObject',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectResponse.FromString,
-                )
+                _registered_method=True)
         self.GetObjectMany = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetObjectMany',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectManyRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectManyResponse.FromString,
-                )
+                _registered_method=True)
         self.GetObjects = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetObjects',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectsRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectsResponse.FromString,
-                )
+                _registered_method=True)
         self.GetRelation = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetRelation',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationResponse.FromString,
-                )
+                _registered_method=True)
         self.GetRelations = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetRelations',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationsRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationsResponse.FromString,
-                )
+                _registered_method=True)
         self.CheckPermission = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/CheckPermission',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckPermissionRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckPermissionResponse.FromString,
-                )
+                _registered_method=True)
         self.CheckRelation = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/CheckRelation',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckRelationRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckRelationResponse.FromString,
-                )
+                _registered_method=True)
         self.GetGraph = channel.unary_unary(
                 '/aserto.directory.reader.v2.Reader/GetGraph',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetGraphRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetGraphResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class ReaderServicer(object):
@@ -258,6 +258,7 @@ def add_ReaderServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'aserto.directory.reader.v2.Reader', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('aserto.directory.reader.v2.Reader', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -275,11 +276,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetObjectType',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetObjectType',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypeRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetObjectTypes(request,
@@ -292,11 +303,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetObjectTypes',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetObjectTypes',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypesRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectTypesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetRelationType(request,
@@ -309,11 +330,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetRelationType',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetRelationType',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypeRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetRelationTypes(request,
@@ -326,11 +357,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetRelationTypes',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetRelationTypes',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypesRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationTypesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetPermission(request,
@@ -343,11 +384,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetPermission',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetPermission',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetPermissions(request,
@@ -360,11 +411,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetPermissions',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetPermissions',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionsRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetPermissionsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetObject(request,
@@ -377,11 +438,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetObject',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetObject',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetObjectMany(request,
@@ -394,11 +465,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetObjectMany',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetObjectMany',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectManyRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectManyResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetObjects(request,
@@ -411,11 +492,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetObjects',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetObjects',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectsRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetObjectsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetRelation(request,
@@ -428,11 +519,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetRelation',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetRelation',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetRelations(request,
@@ -445,11 +546,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetRelations',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetRelations',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationsRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetRelationsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CheckPermission(request,
@@ -462,11 +573,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/CheckPermission',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/CheckPermission',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckPermissionRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckPermissionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CheckRelation(request,
@@ -479,11 +600,21 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/CheckRelation',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/CheckRelation',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckRelationRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.CheckRelationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetGraph(request,
@@ -496,8 +627,18 @@ class Reader(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.reader.v2.Reader/GetGraph',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v2.Reader/GetGraph',
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetGraphRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v2_dot_reader__pb2.GetGraphResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

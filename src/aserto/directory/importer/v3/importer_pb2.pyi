@@ -11,9 +11,11 @@ class Opcode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     OPCODE_UNKNOWN: _ClassVar[Opcode]
     OPCODE_SET: _ClassVar[Opcode]
     OPCODE_DELETE: _ClassVar[Opcode]
+    OPCODE_DELETE_WITH_RELATIONS: _ClassVar[Opcode]
 OPCODE_UNKNOWN: Opcode
 OPCODE_SET: Opcode
 OPCODE_DELETE: Opcode
+OPCODE_DELETE_WITH_RELATIONS: Opcode
 
 class ImportRequest(_message.Message):
     __slots__ = ("op_code", "object", "relation")

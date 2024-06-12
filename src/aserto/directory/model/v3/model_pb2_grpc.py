@@ -20,17 +20,17 @@ class ModelStub(object):
                 '/aserto.directory.model.v3.Model/GetManifest',
                 request_serializer=aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.GetManifestRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.GetManifestResponse.FromString,
-                )
+                _registered_method=True)
         self.SetManifest = channel.stream_unary(
                 '/aserto.directory.model.v3.Model/SetManifest',
                 request_serializer=aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.SetManifestRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.SetManifestResponse.FromString,
-                )
+                _registered_method=True)
         self.DeleteManifest = channel.unary_unary(
                 '/aserto.directory.model.v3.Model/DeleteManifest',
                 request_serializer=aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.DeleteManifestRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.DeleteManifestResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class ModelServicer(object):
@@ -78,6 +78,7 @@ def add_ModelServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'aserto.directory.model.v3.Model', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('aserto.directory.model.v3.Model', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -97,11 +98,21 @@ class Model(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/aserto.directory.model.v3.Model/GetManifest',
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/aserto.directory.model.v3.Model/GetManifest',
             aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.GetManifestRequest.SerializeToString,
             aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.GetManifestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetManifest(request_iterator,
@@ -114,11 +125,21 @@ class Model(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/aserto.directory.model.v3.Model/SetManifest',
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/aserto.directory.model.v3.Model/SetManifest',
             aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.SetManifestRequest.SerializeToString,
             aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.SetManifestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def DeleteManifest(request,
@@ -131,8 +152,18 @@ class Model(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/aserto.directory.model.v3.Model/DeleteManifest',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.model.v3.Model/DeleteManifest',
             aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.DeleteManifestRequest.SerializeToString,
             aserto_dot_directory_dot_model_dot_v3_dot_model__pb2.DeleteManifestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
