@@ -32,15 +32,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4"
-grpcio = "^1.49"
-protobuf = "^4.21.0"
+grpcio = "^1.64.1"
+protobuf = "^5.27.2"
 
 [tool.poetry.dev-dependencies]
-black = "^23.11.0"
-isort = "^5.10.0"
-pyright = "^1.1.0"
+black = "^24.4.2"
+isort = "^5.13.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
