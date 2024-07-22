@@ -25,7 +25,8 @@ class ImporterServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Import(self, request_iterator, context):
-        """Missing associated documentation comment in .proto file."""
+        """import stream of objects and relations
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

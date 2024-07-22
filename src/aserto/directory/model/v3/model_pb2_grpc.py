@@ -39,19 +39,22 @@ class ModelServicer(object):
     """
 
     def GetManifest(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """get manifest instance
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetManifest(self, request_iterator, context):
-        """Missing associated documentation comment in .proto file."""
+        """set manifest instance
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteManifest(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """delete manifest instance
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

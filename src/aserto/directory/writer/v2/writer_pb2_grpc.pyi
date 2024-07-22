@@ -23,7 +23,6 @@ class WriterStub:
         aserto.directory.writer.v2.writer_pb2.SetObjectTypeRequest,
         aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse,
     ]
-    """object type metadata methods"""
 
     DeleteObjectType: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeRequest,
@@ -34,7 +33,6 @@ class WriterStub:
         aserto.directory.writer.v2.writer_pb2.SetRelationTypeRequest,
         aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse,
     ]
-    """relation type metadata methods"""
 
     DeleteRelationType: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeRequest,
@@ -45,7 +43,6 @@ class WriterStub:
         aserto.directory.writer.v2.writer_pb2.SetPermissionRequest,
         aserto.directory.writer.v2.writer_pb2.SetPermissionResponse,
     ]
-    """permission metadata methods"""
 
     DeletePermission: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeletePermissionRequest,
@@ -56,30 +53,39 @@ class WriterStub:
         aserto.directory.writer.v2.writer_pb2.SetObjectRequest,
         aserto.directory.writer.v2.writer_pb2.SetObjectResponse,
     ]
-    """object methods"""
+    """set object instance
+    Deprecated: directory.v2.SetObject is deprecated, use directory.v3.SetObject.
+    """
 
     DeleteObject: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteObjectRequest,
         aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse,
     ]
+    """delete object instance
+    Deprecated: directory.v2.DeleteObject is deprecated, use directory.v3.DeleteObject.
+    """
 
     SetRelation: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.SetRelationRequest,
         aserto.directory.writer.v2.writer_pb2.SetRelationResponse,
     ]
-    """relation methods"""
+    """set relation instance
+    Deprecated: directory.v2.SetRelation is deprecated, use directory.v3.SetRelation.
+    """
 
     DeleteRelation: grpc.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteRelationRequest,
         aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse,
     ]
+    """delete relation instance
+    Deprecated: directory.v2.DeleteRelation is deprecated, use directory.v3.DeleteRelation.
+    """
 
 class WriterAsyncStub:
     SetObjectType: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.SetObjectTypeRequest,
         aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse,
     ]
-    """object type metadata methods"""
 
     DeleteObjectType: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteObjectTypeRequest,
@@ -90,7 +96,6 @@ class WriterAsyncStub:
         aserto.directory.writer.v2.writer_pb2.SetRelationTypeRequest,
         aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse,
     ]
-    """relation type metadata methods"""
 
     DeleteRelationType: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteRelationTypeRequest,
@@ -101,7 +106,6 @@ class WriterAsyncStub:
         aserto.directory.writer.v2.writer_pb2.SetPermissionRequest,
         aserto.directory.writer.v2.writer_pb2.SetPermissionResponse,
     ]
-    """permission metadata methods"""
 
     DeletePermission: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeletePermissionRequest,
@@ -112,23 +116,33 @@ class WriterAsyncStub:
         aserto.directory.writer.v2.writer_pb2.SetObjectRequest,
         aserto.directory.writer.v2.writer_pb2.SetObjectResponse,
     ]
-    """object methods"""
+    """set object instance
+    Deprecated: directory.v2.SetObject is deprecated, use directory.v3.SetObject.
+    """
 
     DeleteObject: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteObjectRequest,
         aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse,
     ]
+    """delete object instance
+    Deprecated: directory.v2.DeleteObject is deprecated, use directory.v3.DeleteObject.
+    """
 
     SetRelation: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.SetRelationRequest,
         aserto.directory.writer.v2.writer_pb2.SetRelationResponse,
     ]
-    """relation methods"""
+    """set relation instance
+    Deprecated: directory.v2.SetRelation is deprecated, use directory.v3.SetRelation.
+    """
 
     DeleteRelation: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.writer.v2.writer_pb2.DeleteRelationRequest,
         aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse,
     ]
+    """delete relation instance
+    Deprecated: directory.v2.DeleteRelation is deprecated, use directory.v3.DeleteRelation.
+    """
 
 class WriterServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -136,8 +150,7 @@ class WriterServicer(metaclass=abc.ABCMeta):
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetObjectTypeRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse]]:
-        """object type metadata methods"""
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetObjectTypeResponse]]: ...
 
     @abc.abstractmethod
     def DeleteObjectType(
@@ -151,8 +164,7 @@ class WriterServicer(metaclass=abc.ABCMeta):
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetRelationTypeRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse]]:
-        """relation type metadata methods"""
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetRelationTypeResponse]]: ...
 
     @abc.abstractmethod
     def DeleteRelationType(
@@ -166,8 +178,7 @@ class WriterServicer(metaclass=abc.ABCMeta):
         self,
         request: aserto.directory.writer.v2.writer_pb2.SetPermissionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetPermissionResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetPermissionResponse]]:
-        """permission metadata methods"""
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetPermissionResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetPermissionResponse]]: ...
 
     @abc.abstractmethod
     def DeletePermission(
@@ -182,14 +193,19 @@ class WriterServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.writer.v2.writer_pb2.SetObjectRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetObjectResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetObjectResponse]]:
-        """object methods"""
+        """set object instance
+        Deprecated: directory.v2.SetObject is deprecated, use directory.v3.SetObject.
+        """
 
     @abc.abstractmethod
     def DeleteObject(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeleteObjectRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse]]: ...
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteObjectResponse]]:
+        """delete object instance
+        Deprecated: directory.v2.DeleteObject is deprecated, use directory.v3.DeleteObject.
+        """
 
     @abc.abstractmethod
     def SetRelation(
@@ -197,13 +213,18 @@ class WriterServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.writer.v2.writer_pb2.SetRelationRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.SetRelationResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.SetRelationResponse]]:
-        """relation methods"""
+        """set relation instance
+        Deprecated: directory.v2.SetRelation is deprecated, use directory.v3.SetRelation.
+        """
 
     @abc.abstractmethod
     def DeleteRelation(
         self,
         request: aserto.directory.writer.v2.writer_pb2.DeleteRelationRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse]]: ...
+    ) -> typing.Union[aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse, collections.abc.Awaitable[aserto.directory.writer.v2.writer_pb2.DeleteRelationResponse]]:
+        """delete relation instance
+        Deprecated: directory.v2.DeleteRelation is deprecated, use directory.v3.DeleteRelation.
+        """
 
 def add_WriterServicer_to_server(servicer: WriterServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

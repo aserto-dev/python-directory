@@ -40,27 +40,29 @@ class WriterServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetObject(self, request, context):
-        """object methods
+        """set object instance
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteObject(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """delete object instance
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetRelation(self, request, context):
-        """relation methods
+        """set relation instance
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteRelation(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """delete relation instance
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

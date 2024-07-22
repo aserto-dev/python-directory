@@ -23,12 +23,14 @@ class ExporterStub:
         aserto.directory.exporter.v3.exporter_pb2.ExportRequest,
         aserto.directory.exporter.v3.exporter_pb2.ExportResponse,
     ]
+    """export objects and relations as a stream"""
 
 class ExporterAsyncStub:
     Export: grpc.aio.UnaryStreamMultiCallable[
         aserto.directory.exporter.v3.exporter_pb2.ExportRequest,
         aserto.directory.exporter.v3.exporter_pb2.ExportResponse,
     ]
+    """export objects and relations as a stream"""
 
 class ExporterServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -36,6 +38,7 @@ class ExporterServicer(metaclass=abc.ABCMeta):
         self,
         request: aserto.directory.exporter.v3.exporter_pb2.ExportRequest,
         context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[aserto.directory.exporter.v3.exporter_pb2.ExportResponse], collections.abc.AsyncIterator[aserto.directory.exporter.v3.exporter_pb2.ExportResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[aserto.directory.exporter.v3.exporter_pb2.ExportResponse], collections.abc.AsyncIterator[aserto.directory.exporter.v3.exporter_pb2.ExportResponse]]:
+        """export objects and relations as a stream"""
 
 def add_ExporterServicer_to_server(servicer: ExporterServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

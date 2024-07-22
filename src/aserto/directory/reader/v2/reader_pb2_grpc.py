@@ -90,92 +90,106 @@ class ReaderServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetObjectType(self, request, context):
-        """object type metadata methods
+        """get object type metadata
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetObjectTypes(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list object type metadata
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRelationType(self, request, context):
-        """relation type metadata methods
+        """get relation type metadata
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRelationTypes(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list relation type metadata
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPermission(self, request, context):
-        """permission metadata methods
+        """get permission metadata
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPermissions(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list permission metadata
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetObject(self, request, context):
-        """object methods
+        """get object 
+        Deprecated: directory.v2.GetObject is deprecated, use directory.v3.GetObject.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetObjectMany(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """get multiple objects
+        Deprecated: directory.v2.GetObjectMany is deprecated, update to use directory.v3.GetObjectMany.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetObjects(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list objects
+        Deprecated: directory.v2.GetObjects is deprecated, update to use directory.v3.GetObjects.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRelation(self, request, context):
-        """relation methods
+        """get relation
+        Deprecated: directory.v2.GetRelation is deprecated, update to use directory.v3.GetRelation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRelations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list relations
+        Deprecated: directory.v2.GetRelations is deprecated, update to use directory.v3.GetRelations.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckPermission(self, request, context):
-        """check permission method
+        """check permission
+        Deprecated: directory.v2.CheckPermission is deprecated, update to use directory.v3.Check.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckRelation(self, request, context):
-        """check relation method
+        """check relation
+        Deprecated: directory.v2.CheckRelation is deprecated, update to use directory.v3.Check.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetGraph(self, request, context):
-        """graph methods
+        """get object relationship graph
+        Deprecated: directory.v2.GetGraph is deprecated, update to use directory.v3.GetGraph.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

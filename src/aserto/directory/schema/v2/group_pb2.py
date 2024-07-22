@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&aserto/directory/schema/v2/group.proto\x12\x1a\x61serto.directory.schema.v2\"6\n\x0fGroupProperties\x12#\n\rconnection_id\x18\x01 \x01(\tR\x0c\x63onnectionIdB\xff\x01\n\x1e\x63om.aserto.directory.schema.v2B\nGroupProtoP\x01ZDgithub.com/aserto-dev/go-directory/aserto/directory/schema/v2;schema\xa2\x02\x03\x41\x44S\xaa\x02\x1a\x41serto.Directory.Schema.V2\xca\x02\x1b\x41serto\\Directory_\\Schema\\V2\xe2\x02\'Aserto\\Directory_\\Schema\\V2\\GPBMetadata\xea\x02\x1d\x41serto::Directory::Schema::V2b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&aserto/directory/schema/v2/group.proto\x12\x1a\x61serto.directory.schema.v2\":\n\x0fGroupProperties\x12#\n\rconnection_id\x18\x01 \x01(\tR\x0c\x63onnectionId:\x02\x18\x01\x42\xff\x01\n\x1e\x63om.aserto.directory.schema.v2B\nGroupProtoP\x01ZDgithub.com/aserto-dev/go-directory/aserto/directory/schema/v2;schema\xa2\x02\x03\x41\x44S\xaa\x02\x1a\x41serto.Directory.Schema.V2\xca\x02\x1b\x41serto\\Directory_\\Schema\\V2\xe2\x02\'Aserto\\Directory_\\Schema\\V2\\GPBMetadata\xea\x02\x1d\x41serto::Directory::Schema::V2b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'aserto.directory.schema.v2.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036com.aserto.directory.schema.v2B\nGroupProtoP\001ZDgithub.com/aserto-dev/go-directory/aserto/directory/schema/v2;schema\242\002\003ADS\252\002\032Aserto.Directory.Schema.V2\312\002\033Aserto\\Directory_\\Schema\\V2\342\002\'Aserto\\Directory_\\Schema\\V2\\GPBMetadata\352\002\035Aserto::Directory::Schema::V2'
+  _globals['_GROUPPROPERTIES']._loaded_options = None
+  _globals['_GROUPPROPERTIES']._serialized_options = b'\030\001'
   _globals['_GROUPPROPERTIES']._serialized_start=70
-  _globals['_GROUPPROPERTIES']._serialized_end=124
+  _globals['_GROUPPROPERTIES']._serialized_end=128
 # @@protoc_insertion_point(module_scope)

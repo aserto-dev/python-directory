@@ -23,158 +23,202 @@ class ReaderStub:
         aserto.directory.reader.v2.reader_pb2.GetObjectTypeRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectTypeResponse,
     ]
-    """object type metadata methods"""
+    """get object type metadata"""
 
     GetObjectTypes: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectTypesRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectTypesResponse,
     ]
+    """list object type metadata"""
 
     GetRelationType: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationTypeRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationTypeResponse,
     ]
-    """relation type metadata methods"""
+    """get relation type metadata"""
 
     GetRelationTypes: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationTypesRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationTypesResponse,
     ]
+    """list relation type metadata"""
 
     GetPermission: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetPermissionRequest,
         aserto.directory.reader.v2.reader_pb2.GetPermissionResponse,
     ]
-    """permission metadata methods"""
+    """get permission metadata"""
 
     GetPermissions: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetPermissionsRequest,
         aserto.directory.reader.v2.reader_pb2.GetPermissionsResponse,
     ]
+    """list permission metadata"""
 
     GetObject: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectResponse,
     ]
-    """object methods"""
+    """get object 
+    Deprecated: directory.v2.GetObject is deprecated, use directory.v3.GetObject.
+    """
 
     GetObjectMany: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectManyRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectManyResponse,
     ]
+    """get multiple objects
+    Deprecated: directory.v2.GetObjectMany is deprecated, update to use directory.v3.GetObjectMany.
+    """
 
     GetObjects: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectsRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectsResponse,
     ]
+    """list objects
+    Deprecated: directory.v2.GetObjects is deprecated, update to use directory.v3.GetObjects.
+    """
 
     GetRelation: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationResponse,
     ]
-    """relation methods"""
+    """get relation
+    Deprecated: directory.v2.GetRelation is deprecated, update to use directory.v3.GetRelation.
+    """
 
     GetRelations: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationsRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationsResponse,
     ]
+    """list relations
+    Deprecated: directory.v2.GetRelations is deprecated, update to use directory.v3.GetRelations.
+    """
 
     CheckPermission: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.CheckPermissionRequest,
         aserto.directory.reader.v2.reader_pb2.CheckPermissionResponse,
     ]
-    """check permission method"""
+    """check permission
+    Deprecated: directory.v2.CheckPermission is deprecated, update to use directory.v3.Check.
+    """
 
     CheckRelation: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.CheckRelationRequest,
         aserto.directory.reader.v2.reader_pb2.CheckRelationResponse,
     ]
-    """check relation method"""
+    """check relation
+    Deprecated: directory.v2.CheckRelation is deprecated, update to use directory.v3.Check.
+    """
 
     GetGraph: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetGraphRequest,
         aserto.directory.reader.v2.reader_pb2.GetGraphResponse,
     ]
-    """graph methods"""
+    """get object relationship graph
+    Deprecated: directory.v2.GetGraph is deprecated, update to use directory.v3.GetGraph.
+    """
 
 class ReaderAsyncStub:
     GetObjectType: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectTypeRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectTypeResponse,
     ]
-    """object type metadata methods"""
+    """get object type metadata"""
 
     GetObjectTypes: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectTypesRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectTypesResponse,
     ]
+    """list object type metadata"""
 
     GetRelationType: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationTypeRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationTypeResponse,
     ]
-    """relation type metadata methods"""
+    """get relation type metadata"""
 
     GetRelationTypes: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationTypesRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationTypesResponse,
     ]
+    """list relation type metadata"""
 
     GetPermission: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetPermissionRequest,
         aserto.directory.reader.v2.reader_pb2.GetPermissionResponse,
     ]
-    """permission metadata methods"""
+    """get permission metadata"""
 
     GetPermissions: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetPermissionsRequest,
         aserto.directory.reader.v2.reader_pb2.GetPermissionsResponse,
     ]
+    """list permission metadata"""
 
     GetObject: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectResponse,
     ]
-    """object methods"""
+    """get object 
+    Deprecated: directory.v2.GetObject is deprecated, use directory.v3.GetObject.
+    """
 
     GetObjectMany: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectManyRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectManyResponse,
     ]
+    """get multiple objects
+    Deprecated: directory.v2.GetObjectMany is deprecated, update to use directory.v3.GetObjectMany.
+    """
 
     GetObjects: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetObjectsRequest,
         aserto.directory.reader.v2.reader_pb2.GetObjectsResponse,
     ]
+    """list objects
+    Deprecated: directory.v2.GetObjects is deprecated, update to use directory.v3.GetObjects.
+    """
 
     GetRelation: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationResponse,
     ]
-    """relation methods"""
+    """get relation
+    Deprecated: directory.v2.GetRelation is deprecated, update to use directory.v3.GetRelation.
+    """
 
     GetRelations: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetRelationsRequest,
         aserto.directory.reader.v2.reader_pb2.GetRelationsResponse,
     ]
+    """list relations
+    Deprecated: directory.v2.GetRelations is deprecated, update to use directory.v3.GetRelations.
+    """
 
     CheckPermission: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.CheckPermissionRequest,
         aserto.directory.reader.v2.reader_pb2.CheckPermissionResponse,
     ]
-    """check permission method"""
+    """check permission
+    Deprecated: directory.v2.CheckPermission is deprecated, update to use directory.v3.Check.
+    """
 
     CheckRelation: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.CheckRelationRequest,
         aserto.directory.reader.v2.reader_pb2.CheckRelationResponse,
     ]
-    """check relation method"""
+    """check relation
+    Deprecated: directory.v2.CheckRelation is deprecated, update to use directory.v3.Check.
+    """
 
     GetGraph: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v2.reader_pb2.GetGraphRequest,
         aserto.directory.reader.v2.reader_pb2.GetGraphResponse,
     ]
-    """graph methods"""
+    """get object relationship graph
+    Deprecated: directory.v2.GetGraph is deprecated, update to use directory.v3.GetGraph.
+    """
 
 class ReaderServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -183,14 +227,15 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.GetObjectTypeRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectTypeResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectTypeResponse]]:
-        """object type metadata methods"""
+        """get object type metadata"""
 
     @abc.abstractmethod
     def GetObjectTypes(
         self,
         request: aserto.directory.reader.v2.reader_pb2.GetObjectTypesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectTypesResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectTypesResponse]]: ...
+    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectTypesResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectTypesResponse]]:
+        """list object type metadata"""
 
     @abc.abstractmethod
     def GetRelationType(
@@ -198,14 +243,15 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.GetRelationTypeRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetRelationTypeResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetRelationTypeResponse]]:
-        """relation type metadata methods"""
+        """get relation type metadata"""
 
     @abc.abstractmethod
     def GetRelationTypes(
         self,
         request: aserto.directory.reader.v2.reader_pb2.GetRelationTypesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetRelationTypesResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetRelationTypesResponse]]: ...
+    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetRelationTypesResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetRelationTypesResponse]]:
+        """list relation type metadata"""
 
     @abc.abstractmethod
     def GetPermission(
@@ -213,14 +259,15 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.GetPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetPermissionResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetPermissionResponse]]:
-        """permission metadata methods"""
+        """get permission metadata"""
 
     @abc.abstractmethod
     def GetPermissions(
         self,
         request: aserto.directory.reader.v2.reader_pb2.GetPermissionsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetPermissionsResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetPermissionsResponse]]: ...
+    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetPermissionsResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetPermissionsResponse]]:
+        """list permission metadata"""
 
     @abc.abstractmethod
     def GetObject(
@@ -228,21 +275,29 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.GetObjectRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectResponse]]:
-        """object methods"""
+        """get object 
+        Deprecated: directory.v2.GetObject is deprecated, use directory.v3.GetObject.
+        """
 
     @abc.abstractmethod
     def GetObjectMany(
         self,
         request: aserto.directory.reader.v2.reader_pb2.GetObjectManyRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectManyResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectManyResponse]]: ...
+    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectManyResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectManyResponse]]:
+        """get multiple objects
+        Deprecated: directory.v2.GetObjectMany is deprecated, update to use directory.v3.GetObjectMany.
+        """
 
     @abc.abstractmethod
     def GetObjects(
         self,
         request: aserto.directory.reader.v2.reader_pb2.GetObjectsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectsResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectsResponse]]: ...
+    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetObjectsResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetObjectsResponse]]:
+        """list objects
+        Deprecated: directory.v2.GetObjects is deprecated, update to use directory.v3.GetObjects.
+        """
 
     @abc.abstractmethod
     def GetRelation(
@@ -250,14 +305,19 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.GetRelationRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetRelationResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetRelationResponse]]:
-        """relation methods"""
+        """get relation
+        Deprecated: directory.v2.GetRelation is deprecated, update to use directory.v3.GetRelation.
+        """
 
     @abc.abstractmethod
     def GetRelations(
         self,
         request: aserto.directory.reader.v2.reader_pb2.GetRelationsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetRelationsResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetRelationsResponse]]: ...
+    ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetRelationsResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetRelationsResponse]]:
+        """list relations
+        Deprecated: directory.v2.GetRelations is deprecated, update to use directory.v3.GetRelations.
+        """
 
     @abc.abstractmethod
     def CheckPermission(
@@ -265,7 +325,9 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.CheckPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.CheckPermissionResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.CheckPermissionResponse]]:
-        """check permission method"""
+        """check permission
+        Deprecated: directory.v2.CheckPermission is deprecated, update to use directory.v3.Check.
+        """
 
     @abc.abstractmethod
     def CheckRelation(
@@ -273,7 +335,9 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.CheckRelationRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.CheckRelationResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.CheckRelationResponse]]:
-        """check relation method"""
+        """check relation
+        Deprecated: directory.v2.CheckRelation is deprecated, update to use directory.v3.Check.
+        """
 
     @abc.abstractmethod
     def GetGraph(
@@ -281,6 +345,8 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         request: aserto.directory.reader.v2.reader_pb2.GetGraphRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v2.reader_pb2.GetGraphResponse, collections.abc.Awaitable[aserto.directory.reader.v2.reader_pb2.GetGraphResponse]]:
-        """graph methods"""
+        """get object relationship graph
+        Deprecated: directory.v2.GetGraph is deprecated, update to use directory.v3.GetGraph.
+        """
 
 def add_ReaderServicer_to_server(servicer: ReaderServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

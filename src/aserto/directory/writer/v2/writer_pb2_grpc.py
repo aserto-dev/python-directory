@@ -70,8 +70,7 @@ class WriterServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetObjectType(self, request, context):
-        """object type metadata methods
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -83,8 +82,7 @@ class WriterServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetRelationType(self, request, context):
-        """relation type metadata methods
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -96,8 +94,7 @@ class WriterServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetPermission(self, request, context):
-        """permission metadata methods
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -109,27 +106,33 @@ class WriterServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetObject(self, request, context):
-        """object methods
+        """set object instance
+        Deprecated: directory.v2.SetObject is deprecated, use directory.v3.SetObject.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteObject(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """delete object instance
+        Deprecated: directory.v2.DeleteObject is deprecated, use directory.v3.DeleteObject.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetRelation(self, request, context):
-        """relation methods
+        """set relation instance
+        Deprecated: directory.v2.SetRelation is deprecated, use directory.v3.SetRelation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteRelation(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """delete relation instance
+        Deprecated: directory.v2.DeleteRelation is deprecated, use directory.v3.DeleteRelation.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

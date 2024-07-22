@@ -65,60 +65,65 @@ class ReaderServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetObject(self, request, context):
-        """object methods
+        """get object
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetObjectMany(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """get multiple objects
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetObjects(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list objects
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRelation(self, request, context):
-        """relation methods
+        """get relation
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRelations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """list relations
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Check(self, request, context):
-        """check method
+        """check if subject has relation or permission with object
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckPermission(self, request, context):
-        """check permission method
+        """check permission (deprecated, use the check method)
+        Deprecated: use directory.v3.Check()
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckRelation(self, request, context):
-        """check relation method
+        """check relation (deprecated, use the check method)
+        Deprecated: use directory.v3.Check()
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetGraph(self, request, context):
-        """graph methods
+        """get object relationship graph
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

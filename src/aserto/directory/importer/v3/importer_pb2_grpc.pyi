@@ -23,12 +23,14 @@ class ImporterStub:
         aserto.directory.importer.v3.importer_pb2.ImportRequest,
         aserto.directory.importer.v3.importer_pb2.ImportResponse,
     ]
+    """import stream of objects and relations"""
 
 class ImporterAsyncStub:
     Import: grpc.aio.StreamStreamMultiCallable[
         aserto.directory.importer.v3.importer_pb2.ImportRequest,
         aserto.directory.importer.v3.importer_pb2.ImportResponse,
     ]
+    """import stream of objects and relations"""
 
 class ImporterServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -36,6 +38,7 @@ class ImporterServicer(metaclass=abc.ABCMeta):
         self,
         request_iterator: _MaybeAsyncIterator[aserto.directory.importer.v3.importer_pb2.ImportRequest],
         context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[aserto.directory.importer.v3.importer_pb2.ImportResponse], collections.abc.AsyncIterator[aserto.directory.importer.v3.importer_pb2.ImportResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[aserto.directory.importer.v3.importer_pb2.ImportResponse], collections.abc.AsyncIterator[aserto.directory.importer.v3.importer_pb2.ImportResponse]]:
+        """import stream of objects and relations"""
 
 def add_ImporterServicer_to_server(servicer: ImporterServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

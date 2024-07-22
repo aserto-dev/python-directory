@@ -25,16 +25,19 @@ class ModelStub:
         aserto.directory.model.v3.model_pb2.GetManifestRequest,
         aserto.directory.model.v3.model_pb2.GetManifestResponse,
     ]
+    """get manifest instance"""
 
     SetManifest: grpc.StreamUnaryMultiCallable[
         aserto.directory.model.v3.model_pb2.SetManifestRequest,
         aserto.directory.model.v3.model_pb2.SetManifestResponse,
     ]
+    """set manifest instance"""
 
     DeleteManifest: grpc.UnaryUnaryMultiCallable[
         aserto.directory.model.v3.model_pb2.DeleteManifestRequest,
         aserto.directory.model.v3.model_pb2.DeleteManifestResponse,
     ]
+    """delete manifest instance"""
 
 class ModelAsyncStub:
     """import "aserto/directory/common/v3/common.proto";"""
@@ -43,16 +46,19 @@ class ModelAsyncStub:
         aserto.directory.model.v3.model_pb2.GetManifestRequest,
         aserto.directory.model.v3.model_pb2.GetManifestResponse,
     ]
+    """get manifest instance"""
 
     SetManifest: grpc.aio.StreamUnaryMultiCallable[
         aserto.directory.model.v3.model_pb2.SetManifestRequest,
         aserto.directory.model.v3.model_pb2.SetManifestResponse,
     ]
+    """set manifest instance"""
 
     DeleteManifest: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.model.v3.model_pb2.DeleteManifestRequest,
         aserto.directory.model.v3.model_pb2.DeleteManifestResponse,
     ]
+    """delete manifest instance"""
 
 class ModelServicer(metaclass=abc.ABCMeta):
     """import "aserto/directory/common/v3/common.proto";"""
@@ -62,20 +68,23 @@ class ModelServicer(metaclass=abc.ABCMeta):
         self,
         request: aserto.directory.model.v3.model_pb2.GetManifestRequest,
         context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[aserto.directory.model.v3.model_pb2.GetManifestResponse], collections.abc.AsyncIterator[aserto.directory.model.v3.model_pb2.GetManifestResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[aserto.directory.model.v3.model_pb2.GetManifestResponse], collections.abc.AsyncIterator[aserto.directory.model.v3.model_pb2.GetManifestResponse]]:
+        """get manifest instance"""
 
     @abc.abstractmethod
     def SetManifest(
         self,
         request_iterator: _MaybeAsyncIterator[aserto.directory.model.v3.model_pb2.SetManifestRequest],
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.model.v3.model_pb2.SetManifestResponse, collections.abc.Awaitable[aserto.directory.model.v3.model_pb2.SetManifestResponse]]: ...
+    ) -> typing.Union[aserto.directory.model.v3.model_pb2.SetManifestResponse, collections.abc.Awaitable[aserto.directory.model.v3.model_pb2.SetManifestResponse]]:
+        """set manifest instance"""
 
     @abc.abstractmethod
     def DeleteManifest(
         self,
         request: aserto.directory.model.v3.model_pb2.DeleteManifestRequest,
         context: _ServicerContext,
-    ) -> typing.Union[aserto.directory.model.v3.model_pb2.DeleteManifestResponse, collections.abc.Awaitable[aserto.directory.model.v3.model_pb2.DeleteManifestResponse]]: ...
+    ) -> typing.Union[aserto.directory.model.v3.model_pb2.DeleteManifestResponse, collections.abc.Awaitable[aserto.directory.model.v3.model_pb2.DeleteManifestResponse]]:
+        """delete manifest instance"""
 
 def add_ModelServicer_to_server(servicer: ModelServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
