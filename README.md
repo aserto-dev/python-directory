@@ -1,20 +1,25 @@
 # Aserto Directory gRPC client
 This is an automatically generated client for interacting with Aserto's
-[Directory service](https://docs.aserto.com/docs/overview/directory) using the gRPC protocol.
+[Directory service](https://www.topaz.sh/docs/directory) using the gRPC protocol.
+
+The code was generated from https://buf.build/aserto-dev/directory.
 
 ## Installation
+
 ### Using Pip
 ```sh
 pip install aserto-directory
 ```
+
 ### Using Poetry
 ```sh
 poetry add aserto-directory
 ```
+
 ## Usage
 ```py
 import grpc
-from aserto.directory.reader.v2 import ReaderStub, GetObjectTypesRequest
+from aserto.directory.reader.v3 import ReaderStub, GetObjectRequest
 
 with grpc.secure_channel(
     target="directory.prod.aserto.com:8443",
@@ -22,14 +27,13 @@ with grpc.secure_channel(
 ) as channel:
     reader = ReaderStub(channel)
 
-    # List all object types in the directory
-    response = reader.GetObjectTypes(
-        GetObjectTypesRequest(),
+    # Read an object from the directory.
+    response = reader.GetObject(
+        GetObjectRequest(object_type="user", object_id="rick@the-citadel.com"),
         metadata=(
             ("authorization", f"basic {ASERTO_DIRECTORY_API_KEY}"),
             ("aserto-tenant-id", ASERTO_TENANT_ID),
         ),
     )
 
-    for object_type in response.results:
-        print("Object Type:", object_type.name)
+    print("Object:", object_type.result)
