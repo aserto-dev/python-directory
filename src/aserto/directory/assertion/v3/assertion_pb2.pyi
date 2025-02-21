@@ -61,15 +61,17 @@ class DeleteAssertionResponse(_message.Message):
     def __init__(self, result: _Optional[_Union[_empty_pb2.Empty, _Mapping]] = ...) -> None: ...
 
 class Assert(_message.Message):
-    __slots__ = ("id", "expected", "check", "check_relation", "check_permission")
+    __slots__ = ("id", "expected", "check", "check_relation", "check_permission", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
     EXPECTED_FIELD_NUMBER: _ClassVar[int]
     CHECK_FIELD_NUMBER: _ClassVar[int]
     CHECK_RELATION_FIELD_NUMBER: _ClassVar[int]
     CHECK_PERMISSION_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     id: int
     expected: bool
     check: _reader_pb2.CheckRequest
     check_relation: _reader_pb2.CheckRelationRequest
     check_permission: _reader_pb2.CheckPermissionRequest
-    def __init__(self, id: _Optional[int] = ..., expected: bool = ..., check: _Optional[_Union[_reader_pb2.CheckRequest, _Mapping]] = ..., check_relation: _Optional[_Union[_reader_pb2.CheckRelationRequest, _Mapping]] = ..., check_permission: _Optional[_Union[_reader_pb2.CheckPermissionRequest, _Mapping]] = ...) -> None: ...
+    description: str
+    def __init__(self, id: _Optional[int] = ..., expected: bool = ..., check: _Optional[_Union[_reader_pb2.CheckRequest, _Mapping]] = ..., check_relation: _Optional[_Union[_reader_pb2.CheckRelationRequest, _Mapping]] = ..., check_permission: _Optional[_Union[_reader_pb2.CheckPermissionRequest, _Mapping]] = ..., description: _Optional[str] = ...) -> None: ...
