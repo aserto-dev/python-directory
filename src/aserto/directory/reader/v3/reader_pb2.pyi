@@ -150,12 +150,28 @@ class CheckRequest(_message.Message):
     def __init__(self, object_type: _Optional[str] = ..., object_id: _Optional[str] = ..., relation: _Optional[str] = ..., subject_type: _Optional[str] = ..., subject_id: _Optional[str] = ..., trace: bool = ...) -> None: ...
 
 class CheckResponse(_message.Message):
-    __slots__ = ("check", "trace")
+    __slots__ = ("check", "trace", "context")
     CHECK_FIELD_NUMBER: _ClassVar[int]
     TRACE_FIELD_NUMBER: _ClassVar[int]
+    CONTEXT_FIELD_NUMBER: _ClassVar[int]
     check: bool
     trace: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, check: bool = ..., trace: _Optional[_Iterable[str]] = ...) -> None: ...
+    context: _struct_pb2.Struct
+    def __init__(self, check: bool = ..., trace: _Optional[_Iterable[str]] = ..., context: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
+
+class ChecksRequest(_message.Message):
+    __slots__ = ("default", "checks")
+    DEFAULT_FIELD_NUMBER: _ClassVar[int]
+    CHECKS_FIELD_NUMBER: _ClassVar[int]
+    default: CheckRequest
+    checks: _containers.RepeatedCompositeFieldContainer[CheckRequest]
+    def __init__(self, default: _Optional[_Union[CheckRequest, _Mapping]] = ..., checks: _Optional[_Iterable[_Union[CheckRequest, _Mapping]]] = ...) -> None: ...
+
+class ChecksResponse(_message.Message):
+    __slots__ = ("checks",)
+    CHECKS_FIELD_NUMBER: _ClassVar[int]
+    checks: _containers.RepeatedCompositeFieldContainer[CheckResponse]
+    def __init__(self, checks: _Optional[_Iterable[_Union[CheckResponse, _Mapping]]] = ...) -> None: ...
 
 class CheckPermissionRequest(_message.Message):
     __slots__ = ("object_type", "object_id", "permission", "subject_type", "subject_id", "trace")

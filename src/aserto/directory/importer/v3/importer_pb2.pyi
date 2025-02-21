@@ -28,21 +28,37 @@ class ImportRequest(_message.Message):
     def __init__(self, op_code: _Optional[_Union[Opcode, str]] = ..., object: _Optional[_Union[_common_pb2.Object, _Mapping]] = ..., relation: _Optional[_Union[_common_pb2.Relation, _Mapping]] = ...) -> None: ...
 
 class ImportResponse(_message.Message):
-    __slots__ = ("object", "relation")
+    __slots__ = ("object", "relation", "status", "counter")
     OBJECT_FIELD_NUMBER: _ClassVar[int]
     RELATION_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    COUNTER_FIELD_NUMBER: _ClassVar[int]
     object: ImportCounter
     relation: ImportCounter
-    def __init__(self, object: _Optional[_Union[ImportCounter, _Mapping]] = ..., relation: _Optional[_Union[ImportCounter, _Mapping]] = ...) -> None: ...
+    status: ImportStatus
+    counter: ImportCounter
+    def __init__(self, object: _Optional[_Union[ImportCounter, _Mapping]] = ..., relation: _Optional[_Union[ImportCounter, _Mapping]] = ..., status: _Optional[_Union[ImportStatus, _Mapping]] = ..., counter: _Optional[_Union[ImportCounter, _Mapping]] = ...) -> None: ...
 
 class ImportCounter(_message.Message):
-    __slots__ = ("recv", "set", "delete", "error")
+    __slots__ = ("recv", "set", "delete", "error", "type")
     RECV_FIELD_NUMBER: _ClassVar[int]
     SET_FIELD_NUMBER: _ClassVar[int]
     DELETE_FIELD_NUMBER: _ClassVar[int]
     ERROR_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     recv: int
     set: int
     delete: int
     error: int
-    def __init__(self, recv: _Optional[int] = ..., set: _Optional[int] = ..., delete: _Optional[int] = ..., error: _Optional[int] = ...) -> None: ...
+    type: str
+    def __init__(self, recv: _Optional[int] = ..., set: _Optional[int] = ..., delete: _Optional[int] = ..., error: _Optional[int] = ..., type: _Optional[str] = ...) -> None: ...
+
+class ImportStatus(_message.Message):
+    __slots__ = ("code", "msg", "req")
+    CODE_FIELD_NUMBER: _ClassVar[int]
+    MSG_FIELD_NUMBER: _ClassVar[int]
+    REQ_FIELD_NUMBER: _ClassVar[int]
+    code: int
+    msg: str
+    req: ImportRequest
+    def __init__(self, code: _Optional[int] = ..., msg: _Optional[str] = ..., req: _Optional[_Union[ImportRequest, _Mapping]] = ...) -> None: ...

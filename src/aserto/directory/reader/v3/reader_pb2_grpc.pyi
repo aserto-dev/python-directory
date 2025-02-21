@@ -55,12 +55,18 @@ class ReaderStub:
     ]
     """check if subject has relation or permission with object"""
 
+    Checks: grpc.UnaryUnaryMultiCallable[
+        aserto.directory.reader.v3.reader_pb2.ChecksRequest,
+        aserto.directory.reader.v3.reader_pb2.ChecksResponse,
+    ]
+    """EXPERIMENTAL: checks validates a set of check requests in a single roundtrip"""
+
     CheckPermission: grpc.UnaryUnaryMultiCallable[
         aserto.directory.reader.v3.reader_pb2.CheckPermissionRequest,
         aserto.directory.reader.v3.reader_pb2.CheckPermissionResponse,
     ]
     """check permission (deprecated, use the check method)
-    Deprecated: use directory.v3.Check()
+    Deprecated: use directory.reader.v3.Check()
     """
 
     CheckRelation: grpc.UnaryUnaryMultiCallable[
@@ -68,7 +74,7 @@ class ReaderStub:
         aserto.directory.reader.v3.reader_pb2.CheckRelationResponse,
     ]
     """check relation (deprecated, use the check method)
-    Deprecated: use directory.v3.Check()
+    Deprecated: use directory.reader.v3.Check()
     """
 
     GetGraph: grpc.UnaryUnaryMultiCallable[
@@ -114,12 +120,18 @@ class ReaderAsyncStub:
     ]
     """check if subject has relation or permission with object"""
 
+    Checks: grpc.aio.UnaryUnaryMultiCallable[
+        aserto.directory.reader.v3.reader_pb2.ChecksRequest,
+        aserto.directory.reader.v3.reader_pb2.ChecksResponse,
+    ]
+    """EXPERIMENTAL: checks validates a set of check requests in a single roundtrip"""
+
     CheckPermission: grpc.aio.UnaryUnaryMultiCallable[
         aserto.directory.reader.v3.reader_pb2.CheckPermissionRequest,
         aserto.directory.reader.v3.reader_pb2.CheckPermissionResponse,
     ]
     """check permission (deprecated, use the check method)
-    Deprecated: use directory.v3.Check()
+    Deprecated: use directory.reader.v3.Check()
     """
 
     CheckRelation: grpc.aio.UnaryUnaryMultiCallable[
@@ -127,7 +139,7 @@ class ReaderAsyncStub:
         aserto.directory.reader.v3.reader_pb2.CheckRelationResponse,
     ]
     """check relation (deprecated, use the check method)
-    Deprecated: use directory.v3.Check()
+    Deprecated: use directory.reader.v3.Check()
     """
 
     GetGraph: grpc.aio.UnaryUnaryMultiCallable[
@@ -186,13 +198,21 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         """check if subject has relation or permission with object"""
 
     @abc.abstractmethod
+    def Checks(
+        self,
+        request: aserto.directory.reader.v3.reader_pb2.ChecksRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[aserto.directory.reader.v3.reader_pb2.ChecksResponse, collections.abc.Awaitable[aserto.directory.reader.v3.reader_pb2.ChecksResponse]]:
+        """EXPERIMENTAL: checks validates a set of check requests in a single roundtrip"""
+
+    @abc.abstractmethod
     def CheckPermission(
         self,
         request: aserto.directory.reader.v3.reader_pb2.CheckPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v3.reader_pb2.CheckPermissionResponse, collections.abc.Awaitable[aserto.directory.reader.v3.reader_pb2.CheckPermissionResponse]]:
         """check permission (deprecated, use the check method)
-        Deprecated: use directory.v3.Check()
+        Deprecated: use directory.reader.v3.Check()
         """
 
     @abc.abstractmethod
@@ -202,7 +222,7 @@ class ReaderServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[aserto.directory.reader.v3.reader_pb2.CheckRelationResponse, collections.abc.Awaitable[aserto.directory.reader.v3.reader_pb2.CheckRelationResponse]]:
         """check relation (deprecated, use the check method)
-        Deprecated: use directory.v3.Check()
+        Deprecated: use directory.reader.v3.Check()
         """
 
     @abc.abstractmethod

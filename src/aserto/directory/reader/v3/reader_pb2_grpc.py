@@ -44,6 +44,11 @@ class ReaderStub(object):
                 request_serializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckRequest.SerializeToString,
                 response_deserializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckResponse.FromString,
                 _registered_method=True)
+        self.Checks = channel.unary_unary(
+                '/aserto.directory.reader.v3.Reader/Checks',
+                request_serializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.ChecksRequest.SerializeToString,
+                response_deserializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.ChecksResponse.FromString,
+                _registered_method=True)
         self.CheckPermission = channel.unary_unary(
                 '/aserto.directory.reader.v3.Reader/CheckPermission',
                 request_serializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckPermissionRequest.SerializeToString,
@@ -106,9 +111,16 @@ class ReaderServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Checks(self, request, context):
+        """EXPERIMENTAL: checks validates a set of check requests in a single roundtrip
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CheckPermission(self, request, context):
         """check permission (deprecated, use the check method)
-        Deprecated: use directory.v3.Check()
+        Deprecated: use directory.reader.v3.Check()
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,7 +128,7 @@ class ReaderServicer(object):
 
     def CheckRelation(self, request, context):
         """check relation (deprecated, use the check method)
-        Deprecated: use directory.v3.Check()
+        Deprecated: use directory.reader.v3.Check()
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -161,6 +173,11 @@ def add_ReaderServicer_to_server(servicer, server):
                     servicer.Check,
                     request_deserializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckRequest.FromString,
                     response_serializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckResponse.SerializeToString,
+            ),
+            'Checks': grpc.unary_unary_rpc_method_handler(
+                    servicer.Checks,
+                    request_deserializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.ChecksRequest.FromString,
+                    response_serializer=aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.ChecksResponse.SerializeToString,
             ),
             'CheckPermission': grpc.unary_unary_rpc_method_handler(
                     servicer.CheckPermission,
@@ -340,6 +357,33 @@ class Reader(object):
             '/aserto.directory.reader.v3.Reader/Check',
             aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckRequest.SerializeToString,
             aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.CheckResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Checks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/aserto.directory.reader.v3.Reader/Checks',
+            aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.ChecksRequest.SerializeToString,
+            aserto_dot_directory_dot_reader_dot_v3_dot_reader__pb2.ChecksResponse.FromString,
             options,
             channel_credentials,
             insecure,
