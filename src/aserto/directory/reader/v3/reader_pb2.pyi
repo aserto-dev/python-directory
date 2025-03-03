@@ -2,7 +2,6 @@ from protoc_gen_openapiv2.options import annotations_pb2 as _annotations_pb2
 from google.api import annotations_pb2 as _annotations_pb2_1
 from google.api import field_behavior_pb2 as _field_behavior_pb2
 from google.protobuf import struct_pb2 as _struct_pb2
-from buf.validate import validate_pb2 as _validate_pb2
 from aserto.directory.common.v3 import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor

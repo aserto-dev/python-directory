@@ -6,9 +6,7 @@ from aserto.directory.model.v3 import model_pb2 as aserto_dot_directory_dot_mode
 
 
 class ModelStub(object):
-    """import "aserto/directory/common/v3/common.proto";
-
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -34,9 +32,7 @@ class ModelStub(object):
 
 
 class ModelServicer(object):
-    """import "aserto/directory/common/v3/common.proto";
-
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def GetManifest(self, request, context):
         """get manifest instance
@@ -86,9 +82,7 @@ def add_ModelServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Model(object):
-    """import "aserto/directory/common/v3/common.proto";
-
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def GetManifest(request,

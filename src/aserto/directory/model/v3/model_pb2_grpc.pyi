@@ -18,8 +18,6 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ModelStub:
-    """import "aserto/directory/common/v3/common.proto";"""
-
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     GetManifest: grpc.UnaryStreamMultiCallable[
         aserto.directory.model.v3.model_pb2.GetManifestRequest,
@@ -40,8 +38,6 @@ class ModelStub:
     """delete manifest instance"""
 
 class ModelAsyncStub:
-    """import "aserto/directory/common/v3/common.proto";"""
-
     GetManifest: grpc.aio.UnaryStreamMultiCallable[
         aserto.directory.model.v3.model_pb2.GetManifestRequest,
         aserto.directory.model.v3.model_pb2.GetManifestResponse,
@@ -61,8 +57,6 @@ class ModelAsyncStub:
     """delete manifest instance"""
 
 class ModelServicer(metaclass=abc.ABCMeta):
-    """import "aserto/directory/common/v3/common.proto";"""
-
     @abc.abstractmethod
     def GetManifest(
         self,
