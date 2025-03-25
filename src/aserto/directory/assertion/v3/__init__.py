@@ -2,6 +2,7 @@
 
 from aserto.directory.assertion.v3.assertion_pb2_grpc import (
     AssertionStub,
+    AssertionAsyncStub,
     AssertionServicer,
 )
 
@@ -19,6 +20,7 @@ from aserto.directory.assertion.v3.assertion_pb2 import (
 
 __all__ = [
     "AssertionStub",
+    "AssertionAsyncStub",
     "AssertionServicer",
     "GetAssertionRequest",
     "GetAssertionResponse",
