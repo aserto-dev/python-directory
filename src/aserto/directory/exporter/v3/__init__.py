@@ -2,6 +2,7 @@
 
 from aserto.directory.exporter.v3.exporter_pb2_grpc import (
     ExporterStub,
+    ExporterAsyncStub,
     ExporterServicer,
 )
 
@@ -13,6 +14,7 @@ from aserto.directory.exporter.v3.exporter_pb2 import (
 
 __all__ = [
     "ExporterStub",
+    "ExporterAsyncStub",
     "ExporterServicer",
     "Option",
     "ExportRequest",

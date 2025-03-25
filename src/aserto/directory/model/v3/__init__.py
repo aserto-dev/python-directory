@@ -13,6 +13,7 @@ from aserto.directory.model.v3.model_pb2 import (
 
 from aserto.directory.model.v3.model_pb2_grpc import (
     ModelStub,
+    ModelAsyncStub,
     ModelServicer,
 )
 
@@ -26,5 +27,6 @@ __all__ = [
     "Metadata",
     "Body",
     "ModelStub",
+    "ModelAsyncStub",
     "ModelServicer",
 ]
